@@ -1,0 +1,373 @@
+# -------------------------------------------------------------------------- #
+#
+# Copyright (C) 2018  Intel Corporation. All rights reserved.
+# Your use of Intel Corporation's design tools, logic functions 
+# and other software and tools, and its AMPP partner logic 
+# functions, and any output files from any of the foregoing 
+# (including device programming or simulation files), and any 
+# associated documentation or information are expressly subject 
+# to the terms and conditions of the Intel Program License 
+# Subscription Agreement, the Intel Quartus Prime License Agreement,
+# the Intel FPGA IP License Agreement, or other applicable license
+# agreement, including, without limitation, that your use is for
+# the sole purpose of programming logic devices manufactured by
+# Intel and sold by Intel or its authorized distributors.  Please
+# refer to the applicable agreement for further details.
+#
+# -------------------------------------------------------------------------- #
+#
+# Quartus Prime
+# Version 18.1.0 Build 625 09/12/2018 SJ Standard Edition
+# Date created = 16:28:26  December 06, 2018
+#
+# -------------------------------------------------------------------------- #
+#
+# Notes:
+#
+# 1) The default values for assignments are stored in the file:
+#		Lab8_assignment_defaults.qdf
+#    If this file doesn't exist, see file:
+#		assignment_defaults.qdf
+#
+# 2) Altera recommends that you do not modify this file. This
+#    file is updated automatically by the Quartus Prime software
+#    and any changes you make may be lost or overwritten.
+#
+# -------------------------------------------------------------------------- #
+
+
+set_global_assignment -name FAMILY "Cyclone V"
+set_global_assignment -name DEVICE 5CSEMA6F31C6
+set_global_assignment -name TOP_LEVEL_ENTITY Lab8
+set_global_assignment -name ORIGINAL_QUARTUS_VERSION 18.1.0
+set_global_assignment -name PROJECT_CREATION_TIME_DATE "16:28:26  DECEMBER 06, 2018"
+set_global_assignment -name LAST_QUARTUS_VERSION "18.1.0 Standard Edition"
+set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
+set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
+set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
+set_global_assignment -name DEVICE_FILTER_PACKAGE FBGA
+set_global_assignment -name DEVICE_FILTER_PIN_COUNT 896
+set_global_assignment -name DEVICE_FILTER_SPEED_GRADE 6
+set_global_assignment -name ERROR_CHECK_FREQUENCY_DIVISOR 256
+set_global_assignment -name EDA_SIMULATION_TOOL "ModelSim-Altera (Verilog)"
+set_global_assignment -name EDA_TIME_SCALE "1 ps" -section_id eda_simulation
+set_global_assignment -name EDA_OUTPUT_DATA_FORMAT "VERILOG HDL" -section_id eda_simulation
+set_location_assignment PIN_AF14 -to CLOCK_50
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to CLOCK_50
+set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to CLOCK_50
+set_location_assignment PIN_V16 -to LEDR[0]
+set_location_assignment PIN_W16 -to LEDR[1]
+set_location_assignment PIN_V17 -to LEDR[2]
+set_location_assignment PIN_V18 -to LEDR[3]
+set_location_assignment PIN_W17 -to LEDR[4]
+set_location_assignment PIN_W19 -to LEDR[5]
+set_location_assignment PIN_Y19 -to LEDR[6]
+set_location_assignment PIN_W20 -to LEDR[7]
+set_location_assignment PIN_W21 -to LEDR[8]
+set_location_assignment PIN_Y21 -to LEDR[9]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LEDR[0]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LEDR[1]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LEDR[2]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LEDR[3]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LEDR[4]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LEDR[5]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LEDR[6]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LEDR[7]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LEDR[8]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LEDR[9]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 16MA -to LEDR[0]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 16MA -to LEDR[1]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 16MA -to LEDR[2]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 16MA -to LEDR[3]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 16MA -to LEDR[4]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 16MA -to LEDR[5]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 16MA -to LEDR[6]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 16MA -to LEDR[7]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 16MA -to LEDR[8]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 16MA -to LEDR[9]
+set_instance_assignment -name SLEW_RATE 1 -to LEDR[0]
+set_instance_assignment -name SLEW_RATE 1 -to LEDR[1]
+set_instance_assignment -name SLEW_RATE 1 -to LEDR[2]
+set_instance_assignment -name SLEW_RATE 1 -to LEDR[3]
+set_instance_assignment -name SLEW_RATE 1 -to LEDR[4]
+set_instance_assignment -name SLEW_RATE 1 -to LEDR[5]
+set_instance_assignment -name SLEW_RATE 1 -to LEDR[6]
+set_instance_assignment -name SLEW_RATE 1 -to LEDR[7]
+set_instance_assignment -name SLEW_RATE 1 -to LEDR[8]
+set_instance_assignment -name SLEW_RATE 1 -to LEDR[9]
+set_location_assignment PIN_AB12 -to SW[0]
+set_location_assignment PIN_AC12 -to SW[1]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SW[0]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SW[1]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to SW[0]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to SW[1]
+set_location_assignment PIN_AE26 -to HEX0[0]
+set_location_assignment PIN_AE27 -to HEX0[1]
+set_location_assignment PIN_AE28 -to HEX0[2]
+set_location_assignment PIN_AG27 -to HEX0[3]
+set_location_assignment PIN_AF28 -to HEX0[4]
+set_location_assignment PIN_AG28 -to HEX0[5]
+set_location_assignment PIN_AH28 -to HEX0[6]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX0[0]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX0[1]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX0[2]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX0[3]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX0[4]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX0[5]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX0[6]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 16MA -to HEX0[0]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 16MA -to HEX0[1]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 16MA -to HEX0[2]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 16MA -to HEX0[3]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 16MA -to HEX0[4]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 16MA -to HEX0[5]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 16MA -to HEX0[6]
+set_instance_assignment -name SLEW_RATE 1 -to HEX0[0]
+set_instance_assignment -name SLEW_RATE 1 -to HEX0[1]
+set_instance_assignment -name SLEW_RATE 1 -to HEX0[2]
+set_instance_assignment -name SLEW_RATE 1 -to HEX0[3]
+set_instance_assignment -name SLEW_RATE 1 -to HEX0[4]
+set_instance_assignment -name SLEW_RATE 1 -to HEX0[5]
+set_instance_assignment -name SLEW_RATE 1 -to HEX0[6]
+set_location_assignment PIN_AJ29 -to HEX1[0]
+set_location_assignment PIN_AH29 -to HEX1[1]
+set_location_assignment PIN_AH30 -to HEX1[2]
+set_location_assignment PIN_AG30 -to HEX1[3]
+set_location_assignment PIN_AF29 -to HEX1[4]
+set_location_assignment PIN_AF30 -to HEX1[5]
+set_location_assignment PIN_AD27 -to HEX1[6]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX1[0]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX1[1]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX1[2]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX1[3]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX1[4]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX1[5]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX1[6]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 16MA -to HEX1[0]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 16MA -to HEX1[1]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 16MA -to HEX1[2]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 16MA -to HEX1[3]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 16MA -to HEX1[4]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 16MA -to HEX1[5]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 16MA -to HEX1[6]
+set_instance_assignment -name SLEW_RATE 1 -to HEX1[0]
+set_instance_assignment -name SLEW_RATE 1 -to HEX1[1]
+set_instance_assignment -name SLEW_RATE 1 -to HEX1[2]
+set_instance_assignment -name SLEW_RATE 1 -to HEX1[3]
+set_instance_assignment -name SLEW_RATE 1 -to HEX1[4]
+set_instance_assignment -name SLEW_RATE 1 -to HEX1[5]
+set_instance_assignment -name SLEW_RATE 1 -to HEX1[6]
+set_location_assignment PIN_AB23 -to HEX2[0]
+set_location_assignment PIN_AE29 -to HEX2[1]
+set_location_assignment PIN_AD29 -to HEX2[2]
+set_location_assignment PIN_AC28 -to HEX2[3]
+set_location_assignment PIN_AD30 -to HEX2[4]
+set_location_assignment PIN_AC29 -to HEX2[5]
+set_location_assignment PIN_AC30 -to HEX2[6]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX2[0]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX2[1]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX2[2]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX2[3]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX2[4]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX2[5]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX2[6]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 16MA -to HEX2[0]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 16MA -to HEX2[1]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 16MA -to HEX2[2]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 16MA -to HEX2[3]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 16MA -to HEX2[4]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 16MA -to HEX2[5]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 16MA -to HEX2[6]
+set_instance_assignment -name SLEW_RATE 1 -to HEX2[0]
+set_instance_assignment -name SLEW_RATE 1 -to HEX2[1]
+set_instance_assignment -name SLEW_RATE 1 -to HEX2[2]
+set_instance_assignment -name SLEW_RATE 1 -to HEX2[3]
+set_instance_assignment -name SLEW_RATE 1 -to HEX2[4]
+set_instance_assignment -name SLEW_RATE 1 -to HEX2[5]
+set_instance_assignment -name SLEW_RATE 1 -to HEX2[6]
+set_location_assignment PIN_AD26 -to HEX3[0]
+set_location_assignment PIN_AC27 -to HEX3[1]
+set_location_assignment PIN_AD25 -to HEX3[2]
+set_location_assignment PIN_AC25 -to HEX3[3]
+set_location_assignment PIN_AB28 -to HEX3[4]
+set_location_assignment PIN_AB25 -to HEX3[5]
+set_location_assignment PIN_AB22 -to HEX3[6]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX3[0]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX3[1]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX3[2]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX3[3]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX3[4]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX3[5]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX3[6]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 16MA -to HEX3[0]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 16MA -to HEX3[1]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 16MA -to HEX3[2]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 16MA -to HEX3[3]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 16MA -to HEX3[4]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 16MA -to HEX3[5]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 16MA -to HEX3[6]
+set_instance_assignment -name SLEW_RATE 1 -to HEX3[0]
+set_instance_assignment -name SLEW_RATE 1 -to HEX3[1]
+set_instance_assignment -name SLEW_RATE 1 -to HEX3[2]
+set_instance_assignment -name SLEW_RATE 1 -to HEX3[3]
+set_instance_assignment -name SLEW_RATE 1 -to HEX3[4]
+set_instance_assignment -name SLEW_RATE 1 -to HEX3[5]
+set_instance_assignment -name SLEW_RATE 1 -to HEX3[6]
+set_location_assignment PIN_AA24 -to HEX4[0]
+set_location_assignment PIN_Y23 -to HEX4[1]
+set_location_assignment PIN_Y24 -to HEX4[2]
+set_location_assignment PIN_W22 -to HEX4[3]
+set_location_assignment PIN_W24 -to HEX4[4]
+set_location_assignment PIN_V23 -to HEX4[5]
+set_location_assignment PIN_W25 -to HEX4[6]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX4[0]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX4[1]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX4[2]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX4[3]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX4[4]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX4[5]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX4[6]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 16MA -to HEX4[0]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 16MA -to HEX4[1]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 16MA -to HEX4[2]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 16MA -to HEX4[3]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 16MA -to HEX4[4]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 16MA -to HEX4[5]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 16MA -to HEX4[6]
+set_instance_assignment -name SLEW_RATE 1 -to HEX4[0]
+set_instance_assignment -name SLEW_RATE 1 -to HEX4[1]
+set_instance_assignment -name SLEW_RATE 1 -to HEX4[2]
+set_instance_assignment -name SLEW_RATE 1 -to HEX4[3]
+set_instance_assignment -name SLEW_RATE 1 -to HEX4[4]
+set_instance_assignment -name SLEW_RATE 1 -to HEX4[5]
+set_instance_assignment -name SLEW_RATE 1 -to HEX4[6]
+set_location_assignment PIN_V25 -to HEX5[0]
+set_location_assignment PIN_AA28 -to HEX5[1]
+set_location_assignment PIN_Y27 -to HEX5[2]
+set_location_assignment PIN_AB27 -to HEX5[3]
+set_location_assignment PIN_AB26 -to HEX5[4]
+set_location_assignment PIN_AA26 -to HEX5[5]
+set_location_assignment PIN_AA25 -to HEX5[6]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX5[0]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX5[1]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX5[2]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX5[3]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX5[4]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX5[5]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to HEX5[6]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 16MA -to HEX5[0]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 16MA -to HEX5[1]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 16MA -to HEX5[2]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 16MA -to HEX5[3]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 16MA -to HEX5[4]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 16MA -to HEX5[5]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 16MA -to HEX5[6]
+set_instance_assignment -name SLEW_RATE 1 -to HEX5[0]
+set_instance_assignment -name SLEW_RATE 1 -to HEX5[1]
+set_instance_assignment -name SLEW_RATE 1 -to HEX5[2]
+set_instance_assignment -name SLEW_RATE 1 -to HEX5[3]
+set_instance_assignment -name SLEW_RATE 1 -to HEX5[4]
+set_instance_assignment -name SLEW_RATE 1 -to HEX5[5]
+set_instance_assignment -name SLEW_RATE 1 -to HEX5[6]
+set_location_assignment PIN_AC20 -to UART0_OUT
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to UART0_OUT
+set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to UART0_OUT
+set_instance_assignment -name SLEW_RATE 1 -to UART0_OUT
+set_location_assignment PIN_AD7 -to PS2_CLK
+set_location_assignment PIN_AE7 -to PS2_DAT
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to PS2_DAT
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to PS2_CLK
+set_instance_assignment -name CURRENT_STRENGTH_NEW 16MA -to PS2_CLK
+set_instance_assignment -name CURRENT_STRENGTH_NEW 16MA -to PS2_DAT
+set_location_assignment PIN_AD17 -to PS2_CLK_MON
+set_location_assignment PIN_Y18 -to PS2_DAT_MON
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to PS2_DAT_MON
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to PS2_CLK_MON
+set_instance_assignment -name CURRENT_STRENGTH_NEW 16MA -to PS2_CLK_MON
+set_instance_assignment -name CURRENT_STRENGTH_NEW 16MA -to PS2_DAT_MON
+set_instance_assignment -name SLEW_RATE 1 -to PS2_CLK_MON
+set_instance_assignment -name SLEW_RATE 1 -to PS2_DAT_MON
+set_location_assignment PIN_AJ19 -to TP[0]
+set_location_assignment PIN_AJ17 -to TP[1]
+set_location_assignment PIN_AJ16 -to TP[2]
+set_location_assignment PIN_AH18 -to TP[3]
+set_location_assignment PIN_AH17 -to TP[4]
+set_location_assignment PIN_AH20 -to TP[5]
+set_location_assignment PIN_AK21 -to TP[6]
+set_location_assignment PIN_AD19 -to TP[7]
+set_location_assignment PIN_AD20 -to TP[8]
+set_location_assignment PIN_AE18 -to TP[9]
+set_location_assignment PIN_AE19 -to TP[10]
+set_location_assignment PIN_AF20 -to TP[11]
+set_location_assignment PIN_AF21 -to TP[12]
+set_location_assignment PIN_AF19 -to TP[13]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to TP[0]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to TP[1]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to TP[2]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to TP[3]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to TP[4]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to TP[5]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to TP[6]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to TP[7]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to TP[8]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to TP[9]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to TP[10]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to TP[11]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to TP[12]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to TP[13]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 16MA -to TP[0]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 16MA -to TP[1]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 16MA -to TP[2]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 16MA -to TP[3]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 16MA -to TP[4]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 16MA -to TP[6]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 16MA -to TP[5]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 16MA -to TP[7]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 16MA -to TP[8]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 16MA -to TP[9]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 16MA -to TP[10]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 16MA -to TP[11]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 16MA -to TP[12]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 16MA -to TP[13]
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to TP[0]
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to TP[1]
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to TP[2]
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to TP[3]
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to TP[4]
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to TP[5]
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to TP[6]
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to TP[7]
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to TP[8]
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to TP[9]
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to TP[10]
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to TP[11]
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to TP[12]
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to TP[13]
+set_location_assignment PIN_AC18 -to PIEZO
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to PIEZO
+set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to PIEZO
+set_instance_assignment -name SLEW_RATE 1 -to PIEZO
+set_global_assignment -name VERILOG_FILE TF_Serial_UART_Keypress_Reporter.v
+set_global_assignment -name VERILOG_FILE System_Reset_Module.v
+set_global_assignment -name VERILOG_FILE Switch_Synchronizer_Bank.v
+set_global_assignment -name VERILOG_FILE Switch_Debounce_Synchronizer.v
+set_global_assignment -name VERILOG_FILE Serial_UART_Transmitter.v
+set_global_assignment -name VERILOG_FILE Serial_UART_Keypress_Reporter.v
+set_global_assignment -name VERILOG_FILE Serial_UART_Baud_Generator.v
+set_global_assignment -name VERILOG_FILE PS2_Keycode_Transcoder.v
+set_global_assignment -name VERILOG_FILE PS2_Keyboard_Serial_Controller.v
+set_global_assignment -name VERILOG_FILE PS2_Keyboard_Module.v
+set_global_assignment -name VERILOG_FILE PS2_Keyboard_Keypress_Tracker.v
+set_global_assignment -name VERILOG_FILE PS2_Keyboard_Keycode_Parser.v
+set_global_assignment -name VERILOG_FILE PS2_Keyboard_Display_Controller.v
+set_global_assignment -name VERILOG_FILE PS2_Bus_Synchronizer.v
+set_global_assignment -name VERILOG_FILE Morse_Code_Transmitter.v
+set_global_assignment -name VERILOG_FILE Morse_Code_Module.v
+set_global_assignment -name VERILOG_FILE Hex_Segment_Decoder.v
+set_global_assignment -name VERILOG_FILE EECS301_Lab5_TopLevel.v
+set_global_assignment -name VERILOG_FILE DROM_Nx32.v
+set_global_assignment -name VERILOG_FILE CDC_Input_Synchronizer.v
+set_global_assignment -name VERILOG_FILE Buzzer_Tone_Generator.v
+set_global_assignment -name VERILOG_FILE Buzzer_PWM_Controller.v
+set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
+set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
