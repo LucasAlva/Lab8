@@ -57,5 +57,47 @@ module PS2_Keyboard_Keypress_Tracker
 	//
 
 	// !! Lab 5: Add the PS2 Keyboard Keypress Tracker State Machine here !!
+	reg [2:0] state;
+	localparam [2:0] 
+		S0 = 3'b001,
+		S1 = 3'b010,
+		S2 = 3'b100;
+	
+	always @(posedge CLK, posedge RESET) begin
+		if(RESET) begin
+			state <= S0;
+			KEY_PRESSED 	<= 1'b0;
+			KEY_KEYCODE 	<= 8'h00;
+			KEY_KEYCHAR 	<= 8'h00;
+			key_keycode_reg<= 8'h00;
+		end
+		else begin
+			case(state)
+				S0: begin
+					KEY_PRESSED <= 1'b0; 	// clear key press signal
+					// update held key status ???
+					// wait for the Key make signal
+					if(KEY_MAKE)
+						state <= S1;
+				end
+				
+				S1:begin
+					// now check for the key break signal and the data
+					if(KEY_BREAK && (key_keycode_reg == KEY_DATA))
+						state <= S2;
+				end
+				
+				S2: begin
+					KEY_KEYCODE <= key_keycode_reg; 	// output keycode data
+					KEY_KEYCHAR <= key_keychar_reg; 	// output keychar data
+					KEY_PRESSED <= 1'b1; 				// assert key pressed signal
+					state 		<= S0;
+				end
+			
+			endcase
+		
+		end
+	
+	end
 
 endmodule

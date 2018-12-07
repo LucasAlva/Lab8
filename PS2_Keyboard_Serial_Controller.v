@@ -111,5 +111,103 @@ module PS2_Keyboard_Serial_Controller
 	
 	
 	// !! Lab 5: Add the PS2 Keyboard Serial Controller State Machine here !!
+	
+	// state machine variable definition
+	reg [5:0] state;
+	localparam [5:0]
+		S0 = 6'b000001,
+		S1 = 6'b000010,
+		S2 = 6'b000100,
+		S3 = 6'b001000,
+		S4 = 6'b010000,
+		S5 = 6'b100000;
+	
+	//
+	// STATE MACHINE PROCESS
+	//
+	always @(posedge CLK, posedge RESET)
+	begin
+		if(RESET)
+		begin
+			// do reset things
+			state 				<= S0;
+			PS2_KEY_READY 		<= 1'b0;
+			PS2_KEY_DATA 		<= 8h'00;
+			bit_count_reg 		<= BIT_COUNT_LOADVAL;
+			ps2_data_reg 		<= 0;
+			ps2_parity_good 	<= 1'b1;
+		end
+		else
+		begin
+			// State machine things
+			case(state)
+				S0:
+				begin
+					// S0 things
+					bit_count_reg 		<= BIT_COUNT_LOADVAL;
+					ps2_parity_good 	<= 1'b1;
+					
+					// change state when we see the ps2 start bit
+					if(ps2_start_bit)
+						state <= S1;
+				end
+				
+				S1: 
+				begin 
+					// S1 things
+					// wait for falling ps2 clk edge
+					if(ps2_clk_negedge)
+						state <= S2;
+				end
+				
+				S2:
+				begin
+					// S2 things
+					ps2_data_reg 		<= ps2_data_reg >> 1; 	// shift data reg to make room for received bit
+					ps2_data_reg[9] 	<= PS2_DATA_SYNC; 		// insert the received bit
+					bit_count_reg 		<= bit_count_reg + 1; 	// increment bit count
+					ps2_parity_good 	<= ( 	1 ^ 
+													ps2_data_reg[0] ^
+													ps2_data_reg[1] ^	
+													ps2_data_reg[2] ^
+													ps2_data_reg[3] ^
+													ps2_data_reg[4] ^
+													ps2_data_reg[5] ^
+													ps2_data_reg[6] ^
+													ps2_data_reg[7] ^
+													ps2_data_reg[8] ^
+													ps2_data_reg[9]); // XOR fucken everything
+					state 				<= S3;  						// proceed to arbitration state
+				end
+				
+				S3:
+				begin
+					// S3 things
+					if(bit_count_reg >= BIT_COUNT_BITS)	// this indicates done
+						state <= S4
+					else
+						state <= S1
+				end
+				
+				S4:
+				begin
+					// S4 things
+					if(ps2_stop_bit && ps2_parity_good) begin
+						PS2_KEY_DATA 	<= ps2_data_reg[7:0]; 	// output Key Data
+						PS2_KEY_READY 	<= 1'b1; 					// assert Key Ready signal
+					end
+					state <= S5;
+				end
+				
+				S5:
+				begin
+					// S5 things
+					PS2_KEY_READY 	<= 1'b0;
+					state <= S0;
+				end
+			endcase
+			
+		end
+	end
 
 endmodule
