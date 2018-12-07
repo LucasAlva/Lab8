@@ -1,0 +1,523 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dD:/College/SenrioYearTemp/EECS-301/EECS-301-Lab8/simulation/modelsim
+vBuzzer_PWM_Controller
+Z1 !s110 1544205806
+!i10b 1
+!s100 3?_ZQj[Pi;^lM1No2NAeL1
+I];CY:UO6;g<h[_QKFLNNd3
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+R0
+Z3 w1544131279
+8D:/College/SenrioYearTemp/EECS-301/EECS-301-Lab8/Buzzer_PWM_Controller.v
+FD:/College/SenrioYearTemp/EECS-301/EECS-301-Lab8/Buzzer_PWM_Controller.v
+Z4 L0 19
+Z5 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z6 !s108 1544205806.000000
+!s107 D:/College/SenrioYearTemp/EECS-301/EECS-301-Lab8/Buzzer_PWM_Controller.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/College/SenrioYearTemp/EECS-301/EECS-301-Lab8|D:/College/SenrioYearTemp/EECS-301/EECS-301-Lab8/Buzzer_PWM_Controller.v|
+!i113 1
+Z7 o-vlog01compat -work work
+Z8 !s92 -vlog01compat -work work +incdir+D:/College/SenrioYearTemp/EECS-301/EECS-301-Lab8
+Z9 tCvgOpt 0
+n@buzzer_@p@w@m_@controller
+vBuzzer_Tone_Generator
+Z10 !s110 1544205807
+!i10b 1
+!s100 k5nEBMa[G6P^GEPik^`D=3
+I@EDoLCV6>nY_^l>?=GHgU1
+R2
+R0
+R3
+8D:/College/SenrioYearTemp/EECS-301/EECS-301-Lab8/Buzzer_Tone_Generator.v
+FD:/College/SenrioYearTemp/EECS-301/EECS-301-Lab8/Buzzer_Tone_Generator.v
+Z11 FD:/College/SenrioYearTemp/EECS-301/EECS-301-Lab8/StdFunctions.vh
+R4
+R5
+r1
+!s85 0
+31
+R6
+!s107 D:/College/SenrioYearTemp/EECS-301/EECS-301-Lab8/StdFunctions.vh|D:/College/SenrioYearTemp/EECS-301/EECS-301-Lab8/Buzzer_Tone_Generator.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/College/SenrioYearTemp/EECS-301/EECS-301-Lab8|D:/College/SenrioYearTemp/EECS-301/EECS-301-Lab8/Buzzer_Tone_Generator.v|
+!i113 1
+R7
+R8
+R9
+n@buzzer_@tone_@generator
+vCDC_Input_Synchronizer
+R1
+!i10b 1
+!s100 8EG@Vn9X0EN[;I2Dd4XO32
+I@mOBjc6OnjEJHkl9_ol_j0
+R2
+R0
+R3
+8D:/College/SenrioYearTemp/EECS-301/EECS-301-Lab8/CDC_Input_Synchronizer.v
+FD:/College/SenrioYearTemp/EECS-301/EECS-301-Lab8/CDC_Input_Synchronizer.v
+Z12 L0 18
+R5
+r1
+!s85 0
+31
+R6
+!s107 D:/College/SenrioYearTemp/EECS-301/EECS-301-Lab8/CDC_Input_Synchronizer.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/College/SenrioYearTemp/EECS-301/EECS-301-Lab8|D:/College/SenrioYearTemp/EECS-301/EECS-301-Lab8/CDC_Input_Synchronizer.v|
+!i113 1
+R7
+R8
+R9
+n@c@d@c_@input_@synchronizer
+vDROM_Nx32
+R1
+!i10b 1
+!s100 Ole_KS7nH`3Jz2c]?cPe<0
+I_U[=VQYME[afIB6`Y_WEW2
+R2
+R0
+R3
+8D:/College/SenrioYearTemp/EECS-301/EECS-301-Lab8/DROM_Nx32.v
+FD:/College/SenrioYearTemp/EECS-301/EECS-301-Lab8/DROM_Nx32.v
+R4
+R5
+r1
+!s85 0
+31
+R6
+!s107 D:/College/SenrioYearTemp/EECS-301/EECS-301-Lab8/DROM_Nx32.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/College/SenrioYearTemp/EECS-301/EECS-301-Lab8|D:/College/SenrioYearTemp/EECS-301/EECS-301-Lab8/DROM_Nx32.v|
+!i113 1
+R7
+R8
+R9
+n@d@r@o@m_@nx32
+vEECS301_Lab5_TopLevel
+R1
+!i10b 1
+!s100 KRl6FPl:gzE3dnT>nYQ<]3
+IP`X9hYd[ZChVf`5^_KSco0
+R2
+R0
+R3
+8D:/College/SenrioYearTemp/EECS-301/EECS-301-Lab8/EECS301_Lab5_TopLevel.v
+FD:/College/SenrioYearTemp/EECS-301/EECS-301-Lab8/EECS301_Lab5_TopLevel.v
+R12
+R5
+r1
+!s85 0
+31
+Z13 !s108 1544205805.000000
+!s107 D:/College/SenrioYearTemp/EECS-301/EECS-301-Lab8/EECS301_Lab5_TopLevel.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/College/SenrioYearTemp/EECS-301/EECS-301-Lab8|D:/College/SenrioYearTemp/EECS-301/EECS-301-Lab8/EECS301_Lab5_TopLevel.v|
+!i113 1
+R7
+R8
+R9
+n@e@e@c@s301_@lab5_@top@level
+vHex_Segment_Decoder
+Z14 !s110 1544205805
+!i10b 1
+!s100 XQXieHKfAGA=45VfBbEb^0
+I47T7n3;P<7QUSdl<IC[Ij2
+R2
+R0
+R3
+8D:/College/SenrioYearTemp/EECS-301/EECS-301-Lab8/Hex_Segment_Decoder.v
+FD:/College/SenrioYearTemp/EECS-301/EECS-301-Lab8/Hex_Segment_Decoder.v
+R12
+R5
+r1
+!s85 0
+31
+R13
+!s107 D:/College/SenrioYearTemp/EECS-301/EECS-301-Lab8/Hex_Segment_Decoder.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/College/SenrioYearTemp/EECS-301/EECS-301-Lab8|D:/College/SenrioYearTemp/EECS-301/EECS-301-Lab8/Hex_Segment_Decoder.v|
+!i113 1
+R7
+R8
+R9
+n@hex_@segment_@decoder
+vMorse_Code_Module
+R1
+!i10b 1
+!s100 ZI5_:eE@Q;AOPNzlkDTc=3
+IANi=^0XkG0imlikQLe<Oh2
+R2
+R0
+R3
+8D:/College/SenrioYearTemp/EECS-301/EECS-301-Lab8/Morse_Code_Module.v
+FD:/College/SenrioYearTemp/EECS-301/EECS-301-Lab8/Morse_Code_Module.v
+R11
+R12
+R5
+r1
+!s85 0
+31
+R6
+!s107 D:/College/SenrioYearTemp/EECS-301/EECS-301-Lab8/StdFunctions.vh|D:/College/SenrioYearTemp/EECS-301/EECS-301-Lab8/Morse_Code_Module.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/College/SenrioYearTemp/EECS-301/EECS-301-Lab8|D:/College/SenrioYearTemp/EECS-301/EECS-301-Lab8/Morse_Code_Module.v|
+!i113 1
+R7
+R8
+R9
+n@morse_@code_@module
+vMorse_Code_Transmitter
+R14
+!i10b 1
+!s100 JkZW;TD`KkN^jYMfGlDV]1
+IHnQXP`o19zWYGnmWBOa6z1
+R2
+R0
+R3
+8D:/College/SenrioYearTemp/EECS-301/EECS-301-Lab8/Morse_Code_Transmitter.v
+FD:/College/SenrioYearTemp/EECS-301/EECS-301-Lab8/Morse_Code_Transmitter.v
+R12
+R5
+r1
+!s85 0
+31
+R13
+!s107 D:/College/SenrioYearTemp/EECS-301/EECS-301-Lab8/Morse_Code_Transmitter.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/College/SenrioYearTemp/EECS-301/EECS-301-Lab8|D:/College/SenrioYearTemp/EECS-301/EECS-301-Lab8/Morse_Code_Transmitter.v|
+!i113 1
+R7
+R8
+R9
+n@morse_@code_@transmitter
+vPS2_Bus_Synchronizer
+R14
+!i10b 1
+!s100 lYmW:QoZ1Q3NooT[R]Of]3
+IB7ZT7Si41iWiZ10AQYD9c2
+R2
+R0
+R3
+8D:/College/SenrioYearTemp/EECS-301/EECS-301-Lab8/PS2_Bus_Synchronizer.v
+FD:/College/SenrioYearTemp/EECS-301/EECS-301-Lab8/PS2_Bus_Synchronizer.v
+L0 21
+R5
+r1
+!s85 0
+31
+R13
+!s107 D:/College/SenrioYearTemp/EECS-301/EECS-301-Lab8/PS2_Bus_Synchronizer.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/College/SenrioYearTemp/EECS-301/EECS-301-Lab8|D:/College/SenrioYearTemp/EECS-301/EECS-301-Lab8/PS2_Bus_Synchronizer.v|
+!i113 1
+R7
+R8
+R9
+n@p@s2_@bus_@synchronizer
+vPS2_Keyboard_Display_Controller
+R14
+!i10b 1
+!s100 4lZMM[j2PFTPe[`@P`8Og3
+ImhH>VfM<m41Vjhj:[0U^T2
+R2
+R0
+R3
+8D:/College/SenrioYearTemp/EECS-301/EECS-301-Lab8/PS2_Keyboard_Display_Controller.v
+FD:/College/SenrioYearTemp/EECS-301/EECS-301-Lab8/PS2_Keyboard_Display_Controller.v
+R12
+R5
+r1
+!s85 0
+31
+R13
+!s107 D:/College/SenrioYearTemp/EECS-301/EECS-301-Lab8/PS2_Keyboard_Display_Controller.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/College/SenrioYearTemp/EECS-301/EECS-301-Lab8|D:/College/SenrioYearTemp/EECS-301/EECS-301-Lab8/PS2_Keyboard_Display_Controller.v|
+!i113 1
+R7
+R8
+R9
+n@p@s2_@keyboard_@display_@controller
+vPS2_Keyboard_Keycode_Parser
+R14
+!i10b 1
+!s100 OWmP?4`zSZcz_WNjWibiI2
+ISX;P`=l5<oD<C0Uz40YiS1
+R2
+R0
+R3
+8D:/College/SenrioYearTemp/EECS-301/EECS-301-Lab8/PS2_Keyboard_Keycode_Parser.v
+FD:/College/SenrioYearTemp/EECS-301/EECS-301-Lab8/PS2_Keyboard_Keycode_Parser.v
+L0 20
+R5
+r1
+!s85 0
+31
+R13
+!s107 D:/College/SenrioYearTemp/EECS-301/EECS-301-Lab8/PS2_Keyboard_Keycode_Parser.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/College/SenrioYearTemp/EECS-301/EECS-301-Lab8|D:/College/SenrioYearTemp/EECS-301/EECS-301-Lab8/PS2_Keyboard_Keycode_Parser.v|
+!i113 1
+R7
+R8
+R9
+n@p@s2_@keyboard_@keycode_@parser
+vPS2_Keyboard_Keypress_Tracker
+R14
+!i10b 1
+!s100 a9MgzDl@jFNZn>^RDFHA72
+IF3QD]K7mR=GO7H4H=hPmo2
+R2
+R0
+R3
+8D:/College/SenrioYearTemp/EECS-301/EECS-301-Lab8/PS2_Keyboard_Keypress_Tracker.v
+FD:/College/SenrioYearTemp/EECS-301/EECS-301-Lab8/PS2_Keyboard_Keypress_Tracker.v
+R12
+R5
+r1
+!s85 0
+31
+R13
+!s107 D:/College/SenrioYearTemp/EECS-301/EECS-301-Lab8/PS2_Keyboard_Keypress_Tracker.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/College/SenrioYearTemp/EECS-301/EECS-301-Lab8|D:/College/SenrioYearTemp/EECS-301/EECS-301-Lab8/PS2_Keyboard_Keypress_Tracker.v|
+!i113 1
+R7
+R8
+R9
+n@p@s2_@keyboard_@keypress_@tracker
+vPS2_Keyboard_Module
+R14
+!i10b 1
+!s100 zPW>R?C7e@N9;0[339P363
+I7O7@eoRe`O6hPZ^L[B:O92
+R2
+R0
+R3
+8D:/College/SenrioYearTemp/EECS-301/EECS-301-Lab8/PS2_Keyboard_Module.v
+FD:/College/SenrioYearTemp/EECS-301/EECS-301-Lab8/PS2_Keyboard_Module.v
+R12
+R5
+r1
+!s85 0
+31
+R13
+!s107 D:/College/SenrioYearTemp/EECS-301/EECS-301-Lab8/PS2_Keyboard_Module.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/College/SenrioYearTemp/EECS-301/EECS-301-Lab8|D:/College/SenrioYearTemp/EECS-301/EECS-301-Lab8/PS2_Keyboard_Module.v|
+!i113 1
+R7
+R8
+R9
+n@p@s2_@keyboard_@module
+vPS2_Keyboard_Serial_Controller
+R1
+!i10b 1
+!s100 lm0_Vc=87S:dzomO:05K20
+InF@h3B=jzY=YhNhHbH90f3
+R2
+R0
+R3
+8D:/College/SenrioYearTemp/EECS-301/EECS-301-Lab8/PS2_Keyboard_Serial_Controller.v
+FD:/College/SenrioYearTemp/EECS-301/EECS-301-Lab8/PS2_Keyboard_Serial_Controller.v
+R11
+R12
+R5
+r1
+!s85 0
+31
+R6
+!s107 D:/College/SenrioYearTemp/EECS-301/EECS-301-Lab8/StdFunctions.vh|D:/College/SenrioYearTemp/EECS-301/EECS-301-Lab8/PS2_Keyboard_Serial_Controller.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/College/SenrioYearTemp/EECS-301/EECS-301-Lab8|D:/College/SenrioYearTemp/EECS-301/EECS-301-Lab8/PS2_Keyboard_Serial_Controller.v|
+!i113 1
+R7
+R8
+R9
+n@p@s2_@keyboard_@serial_@controller
+vPS2_Keycode_Transcoder
+R14
+!i10b 1
+!s100 Peb7fQW15>CU53J9SSLR70
+II8KX<6PnkDLK6L:;gLUA;0
+R2
+R0
+R3
+8D:/College/SenrioYearTemp/EECS-301/EECS-301-Lab8/PS2_Keycode_Transcoder.v
+FD:/College/SenrioYearTemp/EECS-301/EECS-301-Lab8/PS2_Keycode_Transcoder.v
+R12
+R5
+r1
+!s85 0
+31
+R13
+!s107 D:/College/SenrioYearTemp/EECS-301/EECS-301-Lab8/PS2_Keycode_Transcoder.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/College/SenrioYearTemp/EECS-301/EECS-301-Lab8|D:/College/SenrioYearTemp/EECS-301/EECS-301-Lab8/PS2_Keycode_Transcoder.v|
+!i113 1
+R7
+R8
+R9
+n@p@s2_@keycode_@transcoder
+vSerial_UART_Baud_Generator
+R1
+!i10b 1
+!s100 _M3CCK4BNB>7O2<==ed8D2
+IVSdl[QZiVU@g_^8m:BYE30
+R2
+R0
+R3
+8D:/College/SenrioYearTemp/EECS-301/EECS-301-Lab8/Serial_UART_Baud_Generator.v
+FD:/College/SenrioYearTemp/EECS-301/EECS-301-Lab8/Serial_UART_Baud_Generator.v
+R11
+R12
+R5
+r1
+!s85 0
+31
+R6
+!s107 D:/College/SenrioYearTemp/EECS-301/EECS-301-Lab8/StdFunctions.vh|D:/College/SenrioYearTemp/EECS-301/EECS-301-Lab8/Serial_UART_Baud_Generator.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/College/SenrioYearTemp/EECS-301/EECS-301-Lab8|D:/College/SenrioYearTemp/EECS-301/EECS-301-Lab8/Serial_UART_Baud_Generator.v|
+!i113 1
+R7
+R8
+R9
+n@serial_@u@a@r@t_@baud_@generator
+vSerial_UART_Keypress_Reporter
+R14
+!i10b 1
+!s100 g=?oLQaIRhKXmZKDV]iUG3
+IzOcodX@AEnGKKXZ]<oARE3
+R2
+R0
+R3
+8D:/College/SenrioYearTemp/EECS-301/EECS-301-Lab8/Serial_UART_Keypress_Reporter.v
+FD:/College/SenrioYearTemp/EECS-301/EECS-301-Lab8/Serial_UART_Keypress_Reporter.v
+R12
+R5
+r1
+!s85 0
+31
+R13
+!s107 D:/College/SenrioYearTemp/EECS-301/EECS-301-Lab8/Serial_UART_Keypress_Reporter.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/College/SenrioYearTemp/EECS-301/EECS-301-Lab8|D:/College/SenrioYearTemp/EECS-301/EECS-301-Lab8/Serial_UART_Keypress_Reporter.v|
+!i113 1
+R7
+R8
+R9
+n@serial_@u@a@r@t_@keypress_@reporter
+vSerial_UART_Transmitter
+R10
+!i10b 1
+!s100 H8cX=C?1Y7AQJG=Pf1Xab2
+I1Ek@cVmd0]F2Y^26=_Q912
+R2
+R0
+w1544205350
+8D:/College/SenrioYearTemp/EECS-301/EECS-301-Lab8/Serial_UART_Transmitter.v
+FD:/College/SenrioYearTemp/EECS-301/EECS-301-Lab8/Serial_UART_Transmitter.v
+R11
+R12
+R5
+r1
+!s85 0
+31
+Z15 !s108 1544205807.000000
+!s107 D:/College/SenrioYearTemp/EECS-301/EECS-301-Lab8/StdFunctions.vh|D:/College/SenrioYearTemp/EECS-301/EECS-301-Lab8/Serial_UART_Transmitter.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/College/SenrioYearTemp/EECS-301/EECS-301-Lab8|D:/College/SenrioYearTemp/EECS-301/EECS-301-Lab8/Serial_UART_Transmitter.v|
+!i113 1
+R7
+R8
+R9
+n@serial_@u@a@r@t_@transmitter
+vSwitch_Debounce_Synchronizer
+R1
+!i10b 1
+!s100 [le;1M^I99Ea>2U;g]PiQ3
+Im`4UF:VR4UzhcRz7JTSgR1
+R2
+R0
+R3
+8D:/College/SenrioYearTemp/EECS-301/EECS-301-Lab8/Switch_Debounce_Synchronizer.v
+FD:/College/SenrioYearTemp/EECS-301/EECS-301-Lab8/Switch_Debounce_Synchronizer.v
+R11
+R12
+R5
+r1
+!s85 0
+31
+R6
+!s107 D:/College/SenrioYearTemp/EECS-301/EECS-301-Lab8/StdFunctions.vh|D:/College/SenrioYearTemp/EECS-301/EECS-301-Lab8/Switch_Debounce_Synchronizer.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/College/SenrioYearTemp/EECS-301/EECS-301-Lab8|D:/College/SenrioYearTemp/EECS-301/EECS-301-Lab8/Switch_Debounce_Synchronizer.v|
+!i113 1
+R7
+R8
+R9
+n@switch_@debounce_@synchronizer
+vSwitch_Synchronizer_Bank
+R14
+!i10b 1
+!s100 ?8oa_Lk>9K:agIgEVRM5N1
+In09C]?WOKNKNM8MDZ^J<J3
+R2
+R0
+R3
+8D:/College/SenrioYearTemp/EECS-301/EECS-301-Lab8/Switch_Synchronizer_Bank.v
+FD:/College/SenrioYearTemp/EECS-301/EECS-301-Lab8/Switch_Synchronizer_Bank.v
+R12
+R5
+r1
+!s85 0
+31
+R13
+!s107 D:/College/SenrioYearTemp/EECS-301/EECS-301-Lab8/Switch_Synchronizer_Bank.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/College/SenrioYearTemp/EECS-301/EECS-301-Lab8|D:/College/SenrioYearTemp/EECS-301/EECS-301-Lab8/Switch_Synchronizer_Bank.v|
+!i113 1
+R7
+R8
+R9
+n@switch_@synchronizer_@bank
+vSystem_Reset_Module
+R1
+!i10b 1
+!s100 ^Z5CbPP:PWT1[jPDknD?W3
+I>=5:U6gnQ8hg8@[BIaYeK2
+R2
+R0
+R3
+8D:/College/SenrioYearTemp/EECS-301/EECS-301-Lab8/System_Reset_Module.v
+FD:/College/SenrioYearTemp/EECS-301/EECS-301-Lab8/System_Reset_Module.v
+R11
+R12
+R5
+r1
+!s85 0
+31
+R6
+!s107 D:/College/SenrioYearTemp/EECS-301/EECS-301-Lab8/StdFunctions.vh|D:/College/SenrioYearTemp/EECS-301/EECS-301-Lab8/System_Reset_Module.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/College/SenrioYearTemp/EECS-301/EECS-301-Lab8|D:/College/SenrioYearTemp/EECS-301/EECS-301-Lab8/System_Reset_Module.v|
+!i113 1
+R7
+R8
+R9
+n@system_@reset_@module
+vTF_Serial_UART_Keypress_Reporter
+R10
+!i10b 1
+!s100 ?nDbj92W3<fQ<CNMmBKWN2
+Iz8dWVl<BDeddY2z:VBIYb0
+R2
+R0
+R3
+8D:/College/SenrioYearTemp/EECS-301/EECS-301-Lab8/TF_Serial_UART_Keypress_Reporter.v
+FD:/College/SenrioYearTemp/EECS-301/EECS-301-Lab8/TF_Serial_UART_Keypress_Reporter.v
+R12
+R5
+r1
+!s85 0
+31
+R15
+!s107 D:/College/SenrioYearTemp/EECS-301/EECS-301-Lab8/TF_Serial_UART_Keypress_Reporter.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/College/SenrioYearTemp/EECS-301/EECS-301-Lab8|D:/College/SenrioYearTemp/EECS-301/EECS-301-Lab8/TF_Serial_UART_Keypress_Reporter.v|
+!i113 1
+R7
+R8
+R9
+n@t@f_@serial_@u@a@r@t_@keypress_@reporter

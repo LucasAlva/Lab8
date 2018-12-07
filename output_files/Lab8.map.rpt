@@ -1,0 +1,642 @@
+Analysis & Elaboration report for Lab8
+Fri Dec 07 13:03:10 2018
+Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Standard Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Elaboration Summary
+  3. Parallel Compilation
+  4. Parameter Settings for User Entity Instance: System_Reset_Module:system_reset
+  5. Parameter Settings for User Entity Instance: Switch_Synchronizer_Bank:switch_synchronizer
+  6. Parameter Settings for User Entity Instance: Switch_Synchronizer_Bank:switch_synchronizer|Switch_Debounce_Synchronizer:sw_sync_gen[0].sw_synchronizer
+  7. Parameter Settings for User Entity Instance: Switch_Synchronizer_Bank:switch_synchronizer|Switch_Debounce_Synchronizer:sw_sync_gen[0].sw_synchronizer|CDC_Input_Synchronizer:sw_synchronizer
+  8. Parameter Settings for User Entity Instance: Switch_Synchronizer_Bank:switch_synchronizer|Switch_Debounce_Synchronizer:sw_sync_gen[1].sw_synchronizer
+  9. Parameter Settings for User Entity Instance: Switch_Synchronizer_Bank:switch_synchronizer|Switch_Debounce_Synchronizer:sw_sync_gen[1].sw_synchronizer|CDC_Input_Synchronizer:sw_synchronizer
+ 10. Parameter Settings for User Entity Instance: PS2_Keyboard_Module:keyboard_interface
+ 11. Parameter Settings for User Entity Instance: PS2_Keyboard_Module:keyboard_interface|PS2_Bus_Synchronizer:PS2_Bus_Sync
+ 12. Parameter Settings for User Entity Instance: PS2_Keyboard_Module:keyboard_interface|PS2_Bus_Synchronizer:PS2_Bus_Sync|Switch_Debounce_Synchronizer:PS2_CLK_Sync
+ 13. Parameter Settings for User Entity Instance: PS2_Keyboard_Module:keyboard_interface|PS2_Bus_Synchronizer:PS2_Bus_Sync|Switch_Debounce_Synchronizer:PS2_CLK_Sync|CDC_Input_Synchronizer:sw_synchronizer
+ 14. Parameter Settings for User Entity Instance: PS2_Keyboard_Module:keyboard_interface|PS2_Bus_Synchronizer:PS2_Bus_Sync|Switch_Debounce_Synchronizer:PS2_DATA_Sync
+ 15. Parameter Settings for User Entity Instance: PS2_Keyboard_Module:keyboard_interface|PS2_Bus_Synchronizer:PS2_Bus_Sync|Switch_Debounce_Synchronizer:PS2_DATA_Sync|CDC_Input_Synchronizer:sw_synchronizer
+ 16. Parameter Settings for User Entity Instance: PS2_Keyboard_Display_Controller:seg_display_keycode_status|Hex_Segment_Decoder:segment_transcoder
+ 17. Parameter Settings for User Entity Instance: PS2_Keyboard_Display_Controller:seg_display_keychar_status|Hex_Segment_Decoder:segment_transcoder
+ 18. Parameter Settings for User Entity Instance: Serial_UART_Keypress_Reporter:uart_keypress_reporter
+ 19. Parameter Settings for User Entity Instance: Serial_UART_Keypress_Reporter:uart_keypress_reporter|Serial_UART_Baud_Generator:baud_generator
+ 20. Parameter Settings for User Entity Instance: Serial_UART_Keypress_Reporter:uart_keypress_reporter|Serial_UART_Transmitter:uart_tx
+ 21. Parameter Settings for User Entity Instance: Morse_Code_Module:morse_code_tx
+ 22. Parameter Settings for User Entity Instance: Morse_Code_Module:morse_code_tx|DROM_Nx32:MC_Encoding_ROM
+ 23. Parameter Settings for User Entity Instance: Buzzer_Tone_Generator:tone_generator
+ 24. Parameter Settings for User Entity Instance: Buzzer_Tone_Generator:tone_generator|Buzzer_PWM_Controller:pwm_controller
+ 25. Analysis & Elaboration Settings
+ 26. Port Connectivity Checks: "Buzzer_Tone_Generator:tone_generator|Buzzer_PWM_Controller:pwm_controller"
+ 27. Port Connectivity Checks: "Morse_Code_Module:morse_code_tx"
+ 28. Port Connectivity Checks: "Serial_UART_Keypress_Reporter:uart_keypress_reporter|Serial_UART_Baud_Generator:baud_generator"
+ 29. Port Connectivity Checks: "Serial_UART_Keypress_Reporter:uart_keypress_reporter"
+ 30. Port Connectivity Checks: "PS2_Keyboard_Module:keyboard_interface|PS2_Keyboard_Keypress_Tracker:kb_keypress_tracker|PS2_Keycode_Transcoder:keycode_transcoder"
+ 31. Port Connectivity Checks: "PS2_Keyboard_Module:keyboard_interface"
+ 32. Port Connectivity Checks: "System_Reset_Module:system_reset"
+ 33. Analysis & Elaboration Messages
+ 34. Analysis & Elaboration Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2018  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
+
+
+
++---------------------------------------------------------------------------------+
+; Analysis & Elaboration Summary                                                  ;
++-------------------------------+-------------------------------------------------+
+; Analysis & Elaboration Status ; Successful - Fri Dec 07 13:03:10 2018           ;
+; Quartus Prime Version         ; 18.1.0 Build 625 09/12/2018 SJ Standard Edition ;
+; Revision Name                 ; Lab8                                            ;
+; Top-level Entity Name         ; EECS301_Lab5_TopLevel                           ;
+; Family                        ; Cyclone V                                       ;
+; Logic utilization (in ALMs)   ; N/A until Partition Merge                       ;
+; Total registers               ; N/A until Partition Merge                       ;
+; Total pins                    ; N/A until Partition Merge                       ;
+; Total virtual pins            ; N/A until Partition Merge                       ;
+; Total block memory bits       ; N/A until Partition Merge                       ;
+; Total PLLs                    ; N/A until Partition Merge                       ;
+; Total DLLs                    ; N/A until Partition Merge                       ;
++-------------------------------+-------------------------------------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
++----------------------------+-------------+
+
+
++-------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: System_Reset_Module:system_reset ;
++-----------------+----------+--------------------------------------------------+
+; Parameter Name  ; Value    ; Type                                             ;
++-----------------+----------+--------------------------------------------------+
+; REF_CLK_RATE_HZ ; 50000000 ; Signed Integer                                   ;
+; POWER_ON_DELAY  ; 500      ; Signed Integer                                   ;
++-----------------+----------+--------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Switch_Synchronizer_Bank:switch_synchronizer ;
++----------------------+----------+---------------------------------------------------------+
+; Parameter Name       ; Value    ; Type                                                    ;
++----------------------+----------+---------------------------------------------------------+
+; SWITCH_SYNC_CHANNELS ; 2        ; Signed Integer                                          ;
+; CLK_RATE_HZ          ; 50000000 ; Signed Integer                                          ;
+; DEBOUNCE_TIME        ; 10000000 ; Signed Integer                                          ;
+; SIG_OUT_INIT         ; 0        ; Unsigned Binary                                         ;
++----------------------+----------+---------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Switch_Synchronizer_Bank:switch_synchronizer|Switch_Debounce_Synchronizer:sw_sync_gen[0].sw_synchronizer ;
++----------------+----------+---------------------------------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value    ; Type                                                                                                                      ;
++----------------+----------+---------------------------------------------------------------------------------------------------------------------------+
+; CLK_RATE_HZ    ; 50000000 ; Signed Integer                                                                                                            ;
+; DEBOUNCE_TIME  ; 10000000 ; Signed Integer                                                                                                            ;
+; SIG_OUT_INIT   ; 0        ; Unsigned Binary                                                                                                           ;
++----------------+----------+---------------------------------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Switch_Synchronizer_Bank:switch_synchronizer|Switch_Debounce_Synchronizer:sw_sync_gen[0].sw_synchronizer|CDC_Input_Synchronizer:sw_synchronizer ;
++----------------+-------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                                                                                                ;
++----------------+-------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; SYNC_REG_LEN   ; 1     ; Signed Integer                                                                                                                                                      ;
++----------------+-------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Switch_Synchronizer_Bank:switch_synchronizer|Switch_Debounce_Synchronizer:sw_sync_gen[1].sw_synchronizer ;
++----------------+----------+---------------------------------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value    ; Type                                                                                                                      ;
++----------------+----------+---------------------------------------------------------------------------------------------------------------------------+
+; CLK_RATE_HZ    ; 50000000 ; Signed Integer                                                                                                            ;
+; DEBOUNCE_TIME  ; 10000000 ; Signed Integer                                                                                                            ;
+; SIG_OUT_INIT   ; 0        ; Unsigned Binary                                                                                                           ;
++----------------+----------+---------------------------------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Switch_Synchronizer_Bank:switch_synchronizer|Switch_Debounce_Synchronizer:sw_sync_gen[1].sw_synchronizer|CDC_Input_Synchronizer:sw_synchronizer ;
++----------------+-------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                                                                                                ;
++----------------+-------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; SYNC_REG_LEN   ; 1     ; Signed Integer                                                                                                                                                      ;
++----------------+-------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: PS2_Keyboard_Module:keyboard_interface ;
++----------------+----------+---------------------------------------------------------+
+; Parameter Name ; Value    ; Type                                                    ;
++----------------+----------+---------------------------------------------------------+
+; CLK_RATE_HZ    ; 50000000 ; Signed Integer                                          ;
++----------------+----------+---------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: PS2_Keyboard_Module:keyboard_interface|PS2_Bus_Synchronizer:PS2_Bus_Sync ;
++----------------+----------+-------------------------------------------------------------------------------------------+
+; Parameter Name ; Value    ; Type                                                                                      ;
++----------------+----------+-------------------------------------------------------------------------------------------+
+; CLK_RATE_HZ    ; 50000000 ; Signed Integer                                                                            ;
+; MIN_PULSE_TIME ; 5000     ; Signed Integer                                                                            ;
++----------------+----------+-------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: PS2_Keyboard_Module:keyboard_interface|PS2_Bus_Synchronizer:PS2_Bus_Sync|Switch_Debounce_Synchronizer:PS2_CLK_Sync ;
++----------------+----------+-------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value    ; Type                                                                                                                                ;
++----------------+----------+-------------------------------------------------------------------------------------------------------------------------------------+
+; CLK_RATE_HZ    ; 50000000 ; Signed Integer                                                                                                                      ;
+; DEBOUNCE_TIME  ; 5000     ; Signed Integer                                                                                                                      ;
+; SIG_OUT_INIT   ; 1        ; Unsigned Binary                                                                                                                     ;
++----------------+----------+-------------------------------------------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: PS2_Keyboard_Module:keyboard_interface|PS2_Bus_Synchronizer:PS2_Bus_Sync|Switch_Debounce_Synchronizer:PS2_CLK_Sync|CDC_Input_Synchronizer:sw_synchronizer ;
++----------------+-------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                                                                                                          ;
++----------------+-------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; SYNC_REG_LEN   ; 1     ; Signed Integer                                                                                                                                                                ;
++----------------+-------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: PS2_Keyboard_Module:keyboard_interface|PS2_Bus_Synchronizer:PS2_Bus_Sync|Switch_Debounce_Synchronizer:PS2_DATA_Sync ;
++----------------+----------+--------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value    ; Type                                                                                                                                 ;
++----------------+----------+--------------------------------------------------------------------------------------------------------------------------------------+
+; CLK_RATE_HZ    ; 50000000 ; Signed Integer                                                                                                                       ;
+; DEBOUNCE_TIME  ; 5000     ; Signed Integer                                                                                                                       ;
+; SIG_OUT_INIT   ; 1        ; Unsigned Binary                                                                                                                      ;
++----------------+----------+--------------------------------------------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: PS2_Keyboard_Module:keyboard_interface|PS2_Bus_Synchronizer:PS2_Bus_Sync|Switch_Debounce_Synchronizer:PS2_DATA_Sync|CDC_Input_Synchronizer:sw_synchronizer ;
++----------------+-------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                                                                                                           ;
++----------------+-------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; SYNC_REG_LEN   ; 1     ; Signed Integer                                                                                                                                                                 ;
++----------------+-------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: PS2_Keyboard_Display_Controller:seg_display_keycode_status|Hex_Segment_Decoder:segment_transcoder ;
++----------------+-------+-----------------------------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                                                  ;
++----------------+-------+-----------------------------------------------------------------------------------------------------------------------+
+; HEX_DIGITS     ; 2     ; Signed Integer                                                                                                        ;
++----------------+-------+-----------------------------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: PS2_Keyboard_Display_Controller:seg_display_keychar_status|Hex_Segment_Decoder:segment_transcoder ;
++----------------+-------+-----------------------------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                                                  ;
++----------------+-------+-----------------------------------------------------------------------------------------------------------------------+
+; HEX_DIGITS     ; 2     ; Signed Integer                                                                                                        ;
++----------------+-------+-----------------------------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Serial_UART_Keypress_Reporter:uart_keypress_reporter ;
++----------------+----------+-----------------------------------------------------------------------+
+; Parameter Name ; Value    ; Type                                                                  ;
++----------------+----------+-----------------------------------------------------------------------+
+; CLK_RATE_HZ    ; 50000000 ; Signed Integer                                                        ;
+; BAUD_RATE      ; 115200   ; Signed Integer                                                        ;
+; DATA_BITS      ; 8        ; Signed Integer                                                        ;
+; STOP_BITS_TX   ; 1        ; Signed Integer                                                        ;
++----------------+----------+-----------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Serial_UART_Keypress_Reporter:uart_keypress_reporter|Serial_UART_Baud_Generator:baud_generator ;
++----------------+----------+-----------------------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value    ; Type                                                                                                            ;
++----------------+----------+-----------------------------------------------------------------------------------------------------------------+
+; CLK_RATE_HZ    ; 50000000 ; Signed Integer                                                                                                  ;
+; BAUD_RATE      ; 115200   ; Signed Integer                                                                                                  ;
++----------------+----------+-----------------------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Serial_UART_Keypress_Reporter:uart_keypress_reporter|Serial_UART_Transmitter:uart_tx ;
++----------------+-------+----------------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                                     ;
++----------------+-------+----------------------------------------------------------------------------------------------------------+
+; DATA_BITS      ; 8     ; Signed Integer                                                                                           ;
+; STOP_BITS      ; 1     ; Signed Integer                                                                                           ;
++----------------+-------+----------------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Morse_Code_Module:morse_code_tx ;
++----------------+----------+--------------------------------------------------+
+; Parameter Name ; Value    ; Type                                             ;
++----------------+----------+--------------------------------------------------+
+; CLK_RATE_HZ    ; 50000000 ; Signed Integer                                   ;
+; XMIT_RATE      ; 70000    ; Signed Integer                                   ;
++----------------+----------+--------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Morse_Code_Module:morse_code_tx|DROM_Nx32:MC_Encoding_ROM ;
++----------------+-------------------+-------------------------------------------------------------------+
+; Parameter Name ; Value             ; Type                                                              ;
++----------------+-------------------+-------------------------------------------------------------------+
+; WIDTH          ; 17                ; Signed Integer                                                    ;
+; REGOUT         ; 1                 ; Signed Integer                                                    ;
+; INIT_00        ; 00000000000000111 ; Unsigned Binary                                                   ;
+; INIT_01        ; 00000000000000011 ; Unsigned Binary                                                   ;
+; INIT_02        ; 00000000111010101 ; Unsigned Binary                                                   ;
+; INIT_03        ; 00001010101111001 ; Unsigned Binary                                                   ;
+; INIT_04        ; 00101110101111011 ; Unsigned Binary                                                   ;
+; INIT_05        ; 00000010101110111 ; Unsigned Binary                                                   ;
+; INIT_06        ; 00000000000010001 ; Unsigned Binary                                                   ;
+; INIT_07        ; 00001011101011001 ; Unsigned Binary                                                   ;
+; INIT_08        ; 00001011101111001 ; Unsigned Binary                                                   ;
+; INIT_09        ; 00000010101010111 ; Unsigned Binary                                                   ;
+; INIT_0A        ; 00000000001010011 ; Unsigned Binary                                                   ;
+; INIT_0B        ; 11101110111011101 ; Unsigned Binary                                                   ;
+; INIT_0C        ; 00001110101111001 ; Unsigned Binary                                                   ;
+; INIT_0D        ; 00001010111011001 ; Unsigned Binary                                                   ;
+; INIT_0E        ; 00000011101110111 ; Unsigned Binary                                                   ;
+; INIT_0F        ; 00000000101110101 ; Unsigned Binary                                                   ;
+; INIT_10        ; 00111011101111011 ; Unsigned Binary                                                   ;
+; INIT_11        ; 00101110111011011 ; Unsigned Binary                                                   ;
+; INIT_12        ; 11101011101111101 ; Unsigned Binary                                                   ;
+; INIT_13        ; 00000010111010111 ; Unsigned Binary                                                   ;
+; INIT_14        ; 00000000101010101 ; Unsigned Binary                                                   ;
+; INIT_15        ; 00000000001110011 ; Unsigned Binary                                                   ;
+; INIT_16        ; 00000011101010111 ; Unsigned Binary                                                   ;
+; INIT_17        ; 00001110101011001 ; Unsigned Binary                                                   ;
+; INIT_18        ; 00001110111011001 ; Unsigned Binary                                                   ;
+; INIT_19        ; 00111010101111011 ; Unsigned Binary                                                   ;
+; INIT_1A        ; 11101110101111101 ; Unsigned Binary                                                   ;
+; INIT_1B        ; 00101011101111011 ; Unsigned Binary                                                   ;
+; INIT_1C        ; 00000000000000000 ; Unsigned Binary                                                   ;
+; INIT_1D        ; 00000000000000000 ; Unsigned Binary                                                   ;
+; INIT_1E        ; 00000000000000000 ; Unsigned Binary                                                   ;
+; INIT_1F        ; 00000000000000000 ; Unsigned Binary                                                   ;
++----------------+-------------------+-------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Buzzer_Tone_Generator:tone_generator ;
++----------------+----------+-------------------------------------------------------+
+; Parameter Name ; Value    ; Type                                                  ;
++----------------+----------+-------------------------------------------------------+
+; CLK_RATE_HZ    ; 50000000 ; Signed Integer                                        ;
++----------------+----------+-------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Buzzer_Tone_Generator:tone_generator|Buzzer_PWM_Controller:pwm_controller ;
++----------------+----------+--------------------------------------------------------------------------------------------+
+; Parameter Name ; Value    ; Type                                                                                       ;
++----------------+----------+--------------------------------------------------------------------------------------------+
+; CLK_RATE_HZ    ; 50000000 ; Signed Integer                                                                             ;
+; PWM_REG_WIDTH  ; 17       ; Signed Integer                                                                             ;
++----------------+----------+--------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Elaboration Settings                                                                                              ;
++---------------------------------------------------------------------------------+-----------------------+--------------------+
+; Option                                                                          ; Setting               ; Default Value      ;
++---------------------------------------------------------------------------------+-----------------------+--------------------+
+; Device                                                                          ; 5CSEMA6F31C6          ;                    ;
+; Top-level entity name                                                           ; EECS301_Lab5_TopLevel ; Lab8               ;
+; Family name                                                                     ; Cyclone V             ; Cyclone V          ;
+; Use smart compilation                                                           ; Off                   ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation                ; On                    ; On                 ;
+; Enable compact report table                                                     ; Off                   ; Off                ;
+; Restructure Multiplexers                                                        ; Auto                  ; Auto               ;
+; MLAB Add Timing Constraints For Mixed-Port Feed-Through Mode Setting Don't Care ; Off                   ; Off                ;
+; Create Debugging Nodes for IP Cores                                             ; Off                   ; Off                ;
+; Preserve fewer node names                                                       ; On                    ; On                 ;
+; Intel FPGA IP Evaluation Mode                                                   ; Enable                ; Enable             ;
+; Verilog Version                                                                 ; Verilog_2001          ; Verilog_2001       ;
+; VHDL Version                                                                    ; VHDL_1993             ; VHDL_1993          ;
+; State Machine Processing                                                        ; Auto                  ; Auto               ;
+; Safe State Machine                                                              ; Off                   ; Off                ;
+; Extract Verilog State Machines                                                  ; On                    ; On                 ;
+; Extract VHDL State Machines                                                     ; On                    ; On                 ;
+; Ignore Verilog initial constructs                                               ; Off                   ; Off                ;
+; Iteration limit for constant Verilog loops                                      ; 5000                  ; 5000               ;
+; Iteration limit for non-constant Verilog loops                                  ; 250                   ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                         ; On                    ; On                 ;
+; Infer RAMs from Raw Logic                                                       ; On                    ; On                 ;
+; Parallel Synthesis                                                              ; On                    ; On                 ;
+; DSP Block Balancing                                                             ; Auto                  ; Auto               ;
+; NOT Gate Push-Back                                                              ; On                    ; On                 ;
+; Power-Up Don't Care                                                             ; On                    ; On                 ;
+; Remove Redundant Logic Cells                                                    ; Off                   ; Off                ;
+; Remove Duplicate Registers                                                      ; On                    ; On                 ;
+; Ignore CARRY Buffers                                                            ; Off                   ; Off                ;
+; Ignore CASCADE Buffers                                                          ; Off                   ; Off                ;
+; Ignore GLOBAL Buffers                                                           ; Off                   ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                       ; Off                   ; Off                ;
+; Ignore LCELL Buffers                                                            ; Off                   ; Off                ;
+; Ignore SOFT Buffers                                                             ; On                    ; On                 ;
+; Limit AHDL Integers to 32 Bits                                                  ; Off                   ; Off                ;
+; Optimization Technique                                                          ; Balanced              ; Balanced           ;
+; Carry Chain Length                                                              ; 70                    ; 70                 ;
+; Auto Carry Chains                                                               ; On                    ; On                 ;
+; Auto Open-Drain Pins                                                            ; On                    ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                           ; Off                   ; Off                ;
+; Auto ROM Replacement                                                            ; On                    ; On                 ;
+; Auto RAM Replacement                                                            ; On                    ; On                 ;
+; Auto DSP Block Replacement                                                      ; On                    ; On                 ;
+; Auto Shift Register Replacement                                                 ; Auto                  ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                                 ; Auto                  ; Auto               ;
+; Auto Clock Enable Replacement                                                   ; On                    ; On                 ;
+; Strict RAM Replacement                                                          ; Off                   ; Off                ;
+; Allow Synchronous Control Signals                                               ; On                    ; On                 ;
+; Force Use of Synchronous Clear Signals                                          ; Off                   ; Off                ;
+; Auto Resource Sharing                                                           ; Off                   ; Off                ;
+; Allow Any RAM Size For Recognition                                              ; Off                   ; Off                ;
+; Allow Any ROM Size For Recognition                                              ; Off                   ; Off                ;
+; Allow Any Shift Register Size For Recognition                                   ; Off                   ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                             ; On                    ; On                 ;
+; Ignore translate_off and synthesis_off directives                               ; Off                   ; Off                ;
+; Timing-Driven Synthesis                                                         ; On                    ; On                 ;
+; Report Parameter Settings                                                       ; On                    ; On                 ;
+; Report Source Assignments                                                       ; On                    ; On                 ;
+; Report Connectivity Checks                                                      ; On                    ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                              ; Off                   ; Off                ;
+; Synchronization Register Chain Length                                           ; 3                     ; 3                  ;
+; Power Optimization During Synthesis                                             ; Normal compilation    ; Normal compilation ;
+; HDL message level                                                               ; Level2                ; Level2             ;
+; Suppress Register Optimization Related Messages                                 ; Off                   ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                        ; 5000                  ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                              ; 5000                  ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                       ; 100                   ; 100                ;
+; Clock MUX Protection                                                            ; On                    ; On                 ;
+; Auto Gated Clock Conversion                                                     ; Off                   ; Off                ;
+; Block Design Naming                                                             ; Auto                  ; Auto               ;
+; SDC constraint protection                                                       ; Off                   ; Off                ;
+; Synthesis Effort                                                                ; Auto                  ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal                    ; On                    ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                            ; Off                   ; Off                ;
+; Analysis & Synthesis Message Level                                              ; Medium                ; Medium             ;
+; Disable Register Merging Across Hierarchies                                     ; Auto                  ; Auto               ;
+; Resource Aware Inference For Block RAM                                          ; On                    ; On                 ;
+; Automatic Parallel Synthesis                                                    ; On                    ; On                 ;
+; Partial Reconfiguration Bitstream ID                                            ; Off                   ; Off                ;
++---------------------------------------------------------------------------------+-----------------------+--------------------+
+
+
++-------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Buzzer_Tone_Generator:tone_generator|Buzzer_PWM_Controller:pwm_controller" ;
++---------------------+--------+----------+-------------------------------------------------------------+
+; Port                ; Type   ; Severity ; Details                                                     ;
++---------------------+--------+----------+-------------------------------------------------------------+
+; PWM_DUTY_COUNTS[16] ; Input  ; Info     ; Stuck at GND                                                ;
+; PWM_INTERVAL_TICK   ; Output ; Info     ; Explicitly unconnected                                      ;
++---------------------+--------+----------+-------------------------------------------------------------+
+
+
++-------------------------------------------------------------+
+; Port Connectivity Checks: "Morse_Code_Module:morse_code_tx" ;
++--------+--------+----------+--------------------------------+
+; Port   ; Type   ; Severity ; Details                        ;
++--------+--------+----------+--------------------------------+
+; ENABLE ; Input  ; Info     ; Stuck at VCC                   ;
+; DONE   ; Output ; Info     ; Explicitly unconnected         ;
++--------+--------+----------+--------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Serial_UART_Keypress_Reporter:uart_keypress_reporter|Serial_UART_Baud_Generator:baud_generator" ;
++------------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port             ; Type   ; Severity ; Details                                                                             ;
++------------------+--------+----------+-------------------------------------------------------------------------------------+
+; BAUD_SAMPLE_TICK ; Output ; Info     ; Explicitly unconnected                                                              ;
++------------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Serial_UART_Keypress_Reporter:uart_keypress_reporter" ;
++---------+--------+----------+----------------------------------------------------+
+; Port    ; Type   ; Severity ; Details                                            ;
++---------+--------+----------+----------------------------------------------------+
+; TX_DONE ; Output ; Info     ; Explicitly unconnected                             ;
++---------+--------+----------+----------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "PS2_Keyboard_Module:keyboard_interface|PS2_Keyboard_Keypress_Tracker:kb_keypress_tracker|PS2_Keycode_Transcoder:keycode_transcoder" ;
++----------+--------+----------+---------------------------------------------------------------------------------------------------------------------------------+
+; Port     ; Type   ; Severity ; Details                                                                                                                         ;
++----------+--------+----------+---------------------------------------------------------------------------------------------------------------------------------+
+; KEY_CHAR ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                             ;
++----------+--------+----------+---------------------------------------------------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------+
+; Port Connectivity Checks: "PS2_Keyboard_Module:keyboard_interface" ;
++---------------------+--------+----------+--------------------------+
+; Port                ; Type   ; Severity ; Details                  ;
++---------------------+--------+----------+--------------------------+
+; PS2_KEYCODE_MONITOR ; Output ; Info     ; Explicitly unconnected   ;
++---------------------+--------+----------+--------------------------+
+
+
++--------------------------------------------------------------+
+; Port Connectivity Checks: "System_Reset_Module:system_reset" ;
++------------+-------+----------+------------------------------+
+; Port       ; Type  ; Severity ; Details                      ;
++------------+-------+----------+------------------------------+
+; PLL_LOCKED ; Input ; Info     ; Stuck at VCC                 ;
++------------+-------+----------+------------------------------+
+
+
++---------------------------------+
+; Analysis & Elaboration Messages ;
++---------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Elaboration
+    Info: Version 18.1.0 Build 625 09/12/2018 SJ Standard Edition
+    Info: Processing started: Fri Dec 07 13:02:58 2018
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Lab8 -c Lab8 --analysis_and_elaboration
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file tf_serial_uart_keypress_reporter.v
+    Info (12023): Found entity 1: TF_Serial_UART_Keypress_Reporter File: D:/College/SenrioYearTemp/EECS-301/EECS-301-Lab8/TF_Serial_UART_Keypress_Reporter.v Line: 18
+Info (12021): Found 1 design units, including 1 entities, in source file system_reset_module.v
+    Info (12023): Found entity 1: System_Reset_Module File: D:/College/SenrioYearTemp/EECS-301/EECS-301-Lab8/System_Reset_Module.v Line: 18
+Info (12021): Found 1 design units, including 1 entities, in source file switch_synchronizer_bank.v
+    Info (12023): Found entity 1: Switch_Synchronizer_Bank File: D:/College/SenrioYearTemp/EECS-301/EECS-301-Lab8/Switch_Synchronizer_Bank.v Line: 18
+Info (12021): Found 1 design units, including 1 entities, in source file switch_debounce_synchronizer.v
+    Info (12023): Found entity 1: Switch_Debounce_Synchronizer File: D:/College/SenrioYearTemp/EECS-301/EECS-301-Lab8/Switch_Debounce_Synchronizer.v Line: 18
+Info (12021): Found 1 design units, including 1 entities, in source file serial_uart_transmitter.v
+    Info (12023): Found entity 1: Serial_UART_Transmitter File: D:/College/SenrioYearTemp/EECS-301/EECS-301-Lab8/Serial_UART_Transmitter.v Line: 18
+Info (12021): Found 1 design units, including 1 entities, in source file serial_uart_keypress_reporter.v
+    Info (12023): Found entity 1: Serial_UART_Keypress_Reporter File: D:/College/SenrioYearTemp/EECS-301/EECS-301-Lab8/Serial_UART_Keypress_Reporter.v Line: 18
+Info (12021): Found 1 design units, including 1 entities, in source file serial_uart_baud_generator.v
+    Info (12023): Found entity 1: Serial_UART_Baud_Generator File: D:/College/SenrioYearTemp/EECS-301/EECS-301-Lab8/Serial_UART_Baud_Generator.v Line: 18
+Info (12021): Found 1 design units, including 1 entities, in source file ps2_keycode_transcoder.v
+    Info (12023): Found entity 1: PS2_Keycode_Transcoder File: D:/College/SenrioYearTemp/EECS-301/EECS-301-Lab8/PS2_Keycode_Transcoder.v Line: 18
+Info (12021): Found 1 design units, including 1 entities, in source file ps2_keyboard_serial_controller.v
+    Info (12023): Found entity 1: PS2_Keyboard_Serial_Controller File: D:/College/SenrioYearTemp/EECS-301/EECS-301-Lab8/PS2_Keyboard_Serial_Controller.v Line: 18
+Info (12021): Found 1 design units, including 1 entities, in source file ps2_keyboard_module.v
+    Info (12023): Found entity 1: PS2_Keyboard_Module File: D:/College/SenrioYearTemp/EECS-301/EECS-301-Lab8/PS2_Keyboard_Module.v Line: 18
+Info (12021): Found 1 design units, including 1 entities, in source file ps2_keyboard_keypress_tracker.v
+    Info (12023): Found entity 1: PS2_Keyboard_Keypress_Tracker File: D:/College/SenrioYearTemp/EECS-301/EECS-301-Lab8/PS2_Keyboard_Keypress_Tracker.v Line: 18
+Info (12021): Found 1 design units, including 1 entities, in source file ps2_keyboard_keycode_parser.v
+    Info (12023): Found entity 1: PS2_Keyboard_Keycode_Parser File: D:/College/SenrioYearTemp/EECS-301/EECS-301-Lab8/PS2_Keyboard_Keycode_Parser.v Line: 20
+Info (12021): Found 1 design units, including 1 entities, in source file ps2_keyboard_display_controller.v
+    Info (12023): Found entity 1: PS2_Keyboard_Display_Controller File: D:/College/SenrioYearTemp/EECS-301/EECS-301-Lab8/PS2_Keyboard_Display_Controller.v Line: 18
+Info (12021): Found 1 design units, including 1 entities, in source file ps2_bus_synchronizer.v
+    Info (12023): Found entity 1: PS2_Bus_Synchronizer File: D:/College/SenrioYearTemp/EECS-301/EECS-301-Lab8/PS2_Bus_Synchronizer.v Line: 21
+Info (12021): Found 1 design units, including 1 entities, in source file morse_code_transmitter.v
+    Info (12023): Found entity 1: Morse_Code_Transmitter File: D:/College/SenrioYearTemp/EECS-301/EECS-301-Lab8/Morse_Code_Transmitter.v Line: 18
+Info (12021): Found 1 design units, including 1 entities, in source file morse_code_module.v
+    Info (12023): Found entity 1: Morse_Code_Module File: D:/College/SenrioYearTemp/EECS-301/EECS-301-Lab8/Morse_Code_Module.v Line: 18
+Info (12021): Found 1 design units, including 1 entities, in source file hex_segment_decoder.v
+    Info (12023): Found entity 1: Hex_Segment_Decoder File: D:/College/SenrioYearTemp/EECS-301/EECS-301-Lab8/Hex_Segment_Decoder.v Line: 18
+Info (12021): Found 1 design units, including 1 entities, in source file eecs301_lab5_toplevel.v
+    Info (12023): Found entity 1: EECS301_Lab5_TopLevel File: D:/College/SenrioYearTemp/EECS-301/EECS-301-Lab8/EECS301_Lab5_TopLevel.v Line: 18
+Info (12021): Found 1 design units, including 1 entities, in source file drom_nx32.v
+    Info (12023): Found entity 1: DROM_Nx32 File: D:/College/SenrioYearTemp/EECS-301/EECS-301-Lab8/DROM_Nx32.v Line: 19
+Info (12021): Found 1 design units, including 1 entities, in source file cdc_input_synchronizer.v
+    Info (12023): Found entity 1: CDC_Input_Synchronizer File: D:/College/SenrioYearTemp/EECS-301/EECS-301-Lab8/CDC_Input_Synchronizer.v Line: 18
+Info (12021): Found 1 design units, including 1 entities, in source file buzzer_tone_generator.v
+    Info (12023): Found entity 1: Buzzer_Tone_Generator File: D:/College/SenrioYearTemp/EECS-301/EECS-301-Lab8/Buzzer_Tone_Generator.v Line: 19
+Info (12021): Found 1 design units, including 1 entities, in source file buzzer_pwm_controller.v
+    Info (12023): Found entity 1: Buzzer_PWM_Controller File: D:/College/SenrioYearTemp/EECS-301/EECS-301-Lab8/Buzzer_PWM_Controller.v Line: 19
+Warning (10222): Verilog HDL Parameter Declaration warning at Serial_UART_Transmitter.v(68): Parameter Declaration in module "Serial_UART_Transmitter" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List File: D:/College/SenrioYearTemp/EECS-301/EECS-301-Lab8/Serial_UART_Transmitter.v Line: 68
+Info (12127): Elaborating entity "EECS301_Lab5_TopLevel" for the top level hierarchy
+Info (12128): Elaborating entity "System_Reset_Module" for hierarchy "System_Reset_Module:system_reset" File: D:/College/SenrioYearTemp/EECS-301/EECS-301-Lab8/EECS301_Lab5_TopLevel.v Line: 82
+Info (12128): Elaborating entity "Switch_Synchronizer_Bank" for hierarchy "Switch_Synchronizer_Bank:switch_synchronizer" File: D:/College/SenrioYearTemp/EECS-301/EECS-301-Lab8/EECS301_Lab5_TopLevel.v Line: 108
+Info (12128): Elaborating entity "Switch_Debounce_Synchronizer" for hierarchy "Switch_Synchronizer_Bank:switch_synchronizer|Switch_Debounce_Synchronizer:sw_sync_gen[0].sw_synchronizer" File: D:/College/SenrioYearTemp/EECS-301/EECS-301-Lab8/Switch_Synchronizer_Bank.v Line: 63
+Info (12128): Elaborating entity "CDC_Input_Synchronizer" for hierarchy "Switch_Synchronizer_Bank:switch_synchronizer|Switch_Debounce_Synchronizer:sw_sync_gen[0].sw_synchronizer|CDC_Input_Synchronizer:sw_synchronizer" File: D:/College/SenrioYearTemp/EECS-301/EECS-301-Lab8/Switch_Debounce_Synchronizer.v Line: 81
+Info (12128): Elaborating entity "PS2_Keyboard_Module" for hierarchy "PS2_Keyboard_Module:keyboard_interface" File: D:/College/SenrioYearTemp/EECS-301/EECS-301-Lab8/EECS301_Lab5_TopLevel.v Line: 142
+Info (12128): Elaborating entity "PS2_Bus_Synchronizer" for hierarchy "PS2_Keyboard_Module:keyboard_interface|PS2_Bus_Synchronizer:PS2_Bus_Sync" File: D:/College/SenrioYearTemp/EECS-301/EECS-301-Lab8/PS2_Keyboard_Module.v Line: 65
+Info (12128): Elaborating entity "Switch_Debounce_Synchronizer" for hierarchy "PS2_Keyboard_Module:keyboard_interface|PS2_Bus_Synchronizer:PS2_Bus_Sync|Switch_Debounce_Synchronizer:PS2_CLK_Sync" File: D:/College/SenrioYearTemp/EECS-301/EECS-301-Lab8/PS2_Bus_Synchronizer.v Line: 58
+Info (12128): Elaborating entity "PS2_Keyboard_Serial_Controller" for hierarchy "PS2_Keyboard_Module:keyboard_interface|PS2_Keyboard_Serial_Controller:kb_serial_controller" File: D:/College/SenrioYearTemp/EECS-301/EECS-301-Lab8/PS2_Keyboard_Module.v Line: 86
+Warning (10858): Verilog HDL warning at PS2_Keyboard_Serial_Controller.v(98): object bit_count_reg used but never assigned File: D:/College/SenrioYearTemp/EECS-301/EECS-301-Lab8/PS2_Keyboard_Serial_Controller.v Line: 98
+Warning (10036): Verilog HDL or VHDL warning at PS2_Keyboard_Serial_Controller.v(99): object "bit_count_done" assigned a value but never read File: D:/College/SenrioYearTemp/EECS-301/EECS-301-Lab8/PS2_Keyboard_Serial_Controller.v Line: 99
+Warning (10858): Verilog HDL warning at PS2_Keyboard_Serial_Controller.v(101): object ps2_data_reg used but never assigned File: D:/College/SenrioYearTemp/EECS-301/EECS-301-Lab8/PS2_Keyboard_Serial_Controller.v Line: 101
+Warning (10036): Verilog HDL or VHDL warning at PS2_Keyboard_Serial_Controller.v(103): object "ps2_start_bit" assigned a value but never read File: D:/College/SenrioYearTemp/EECS-301/EECS-301-Lab8/PS2_Keyboard_Serial_Controller.v Line: 103
+Warning (10036): Verilog HDL or VHDL warning at PS2_Keyboard_Serial_Controller.v(104): object "ps2_stop_bit" assigned a value but never read File: D:/College/SenrioYearTemp/EECS-301/EECS-301-Lab8/PS2_Keyboard_Serial_Controller.v Line: 104
+Warning (10034): Output port "PS2_KEY_DATA" at PS2_Keyboard_Serial_Controller.v(26) has no driver File: D:/College/SenrioYearTemp/EECS-301/EECS-301-Lab8/PS2_Keyboard_Serial_Controller.v Line: 26
+Warning (10034): Output port "PS2_KEY_READY" at PS2_Keyboard_Serial_Controller.v(25) has no driver File: D:/College/SenrioYearTemp/EECS-301/EECS-301-Lab8/PS2_Keyboard_Serial_Controller.v Line: 25
+Info (12128): Elaborating entity "PS2_Keyboard_Keycode_Parser" for hierarchy "PS2_Keyboard_Module:keyboard_interface|PS2_Keyboard_Keycode_Parser:kb_keycode_parser" File: D:/College/SenrioYearTemp/EECS-301/EECS-301-Lab8/PS2_Keyboard_Module.v Line: 110
+Warning (10036): Verilog HDL or VHDL warning at PS2_Keyboard_Keycode_Parser.v(47): object "status_flag" assigned a value but never read File: D:/College/SenrioYearTemp/EECS-301/EECS-301-Lab8/PS2_Keyboard_Keycode_Parser.v Line: 47
+Warning (10034): Output port "KEY_PRESSED_DATA" at PS2_Keyboard_Keycode_Parser.v(29) has no driver File: D:/College/SenrioYearTemp/EECS-301/EECS-301-Lab8/PS2_Keyboard_Keycode_Parser.v Line: 29
+Warning (10034): Output port "KEY_PRESSED_MAKE" at PS2_Keyboard_Keycode_Parser.v(27) has no driver File: D:/College/SenrioYearTemp/EECS-301/EECS-301-Lab8/PS2_Keyboard_Keycode_Parser.v Line: 27
+Warning (10034): Output port "KEY_PRESSED_BREAK" at PS2_Keyboard_Keycode_Parser.v(28) has no driver File: D:/College/SenrioYearTemp/EECS-301/EECS-301-Lab8/PS2_Keyboard_Keycode_Parser.v Line: 28
+Info (12128): Elaborating entity "PS2_Keyboard_Keypress_Tracker" for hierarchy "PS2_Keyboard_Module:keyboard_interface|PS2_Keyboard_Keypress_Tracker:kb_keypress_tracker" File: D:/College/SenrioYearTemp/EECS-301/EECS-301-Lab8/PS2_Keyboard_Module.v Line: 131
+Warning (10034): Output port "KEY_KEYCODE" at PS2_Keyboard_Keypress_Tracker.v(27) has no driver File: D:/College/SenrioYearTemp/EECS-301/EECS-301-Lab8/PS2_Keyboard_Keypress_Tracker.v Line: 27
+Warning (10034): Output port "KEY_KEYCHAR" at PS2_Keyboard_Keypress_Tracker.v(28) has no driver File: D:/College/SenrioYearTemp/EECS-301/EECS-301-Lab8/PS2_Keyboard_Keypress_Tracker.v Line: 28
+Warning (10034): Output port "KEY_PRESSED" at PS2_Keyboard_Keypress_Tracker.v(26) has no driver File: D:/College/SenrioYearTemp/EECS-301/EECS-301-Lab8/PS2_Keyboard_Keypress_Tracker.v Line: 26
+Info (12128): Elaborating entity "PS2_Keycode_Transcoder" for hierarchy "PS2_Keyboard_Module:keyboard_interface|PS2_Keyboard_Keypress_Tracker:kb_keypress_tracker|PS2_Keycode_Transcoder:keycode_transcoder" File: D:/College/SenrioYearTemp/EECS-301/EECS-301-Lab8/PS2_Keyboard_Keypress_Tracker.v Line: 52
+Info (12128): Elaborating entity "PS2_Keyboard_Display_Controller" for hierarchy "PS2_Keyboard_Display_Controller:seg_display_keycode_status" File: D:/College/SenrioYearTemp/EECS-301/EECS-301-Lab8/EECS301_Lab5_TopLevel.v Line: 161
+Info (12128): Elaborating entity "Hex_Segment_Decoder" for hierarchy "PS2_Keyboard_Display_Controller:seg_display_keycode_status|Hex_Segment_Decoder:segment_transcoder" File: D:/College/SenrioYearTemp/EECS-301/EECS-301-Lab8/PS2_Keyboard_Display_Controller.v Line: 53
+Info (12128): Elaborating entity "Serial_UART_Keypress_Reporter" for hierarchy "Serial_UART_Keypress_Reporter:uart_keypress_reporter" File: D:/College/SenrioYearTemp/EECS-301/EECS-301-Lab8/EECS301_Lab5_TopLevel.v Line: 202
+Info (12128): Elaborating entity "Serial_UART_Baud_Generator" for hierarchy "Serial_UART_Keypress_Reporter:uart_keypress_reporter|Serial_UART_Baud_Generator:baud_generator" File: D:/College/SenrioYearTemp/EECS-301/EECS-301-Lab8/Serial_UART_Keypress_Reporter.v Line: 62
+Info (12128): Elaborating entity "Serial_UART_Transmitter" for hierarchy "Serial_UART_Keypress_Reporter:uart_keypress_reporter|Serial_UART_Transmitter:uart_tx" File: D:/College/SenrioYearTemp/EECS-301/EECS-301-Lab8/Serial_UART_Keypress_Reporter.v Line: 89
+Warning (10230): Verilog HDL assignment warning at Serial_UART_Transmitter.v(122): truncated value with size 10 to match size of target (1) File: D:/College/SenrioYearTemp/EECS-301/EECS-301-Lab8/Serial_UART_Transmitter.v Line: 122
+Warning (10230): Verilog HDL assignment warning at Serial_UART_Transmitter.v(137): truncated value with size 32 to match size of target (5) File: D:/College/SenrioYearTemp/EECS-301/EECS-301-Lab8/Serial_UART_Transmitter.v Line: 137
+Warning (10240): Verilog HDL Always Construct warning at Serial_UART_Transmitter.v(77): inferring latch(es) for variable "State", which holds its previous value in one or more paths through the always construct File: D:/College/SenrioYearTemp/EECS-301/EECS-301-Lab8/Serial_UART_Transmitter.v Line: 77
+Warning (10240): Verilog HDL Always Construct warning at Serial_UART_Transmitter.v(77): inferring latch(es) for variable "TX_DONE", which holds its previous value in one or more paths through the always construct File: D:/College/SenrioYearTemp/EECS-301/EECS-301-Lab8/Serial_UART_Transmitter.v Line: 77
+Warning (10240): Verilog HDL Always Construct warning at Serial_UART_Transmitter.v(77): inferring latch(es) for variable "UART_TX", which holds its previous value in one or more paths through the always construct File: D:/College/SenrioYearTemp/EECS-301/EECS-301-Lab8/Serial_UART_Transmitter.v Line: 77
+Warning (10240): Verilog HDL Always Construct warning at Serial_UART_Transmitter.v(77): inferring latch(es) for variable "tx_frame_data_reg", which holds its previous value in one or more paths through the always construct File: D:/College/SenrioYearTemp/EECS-301/EECS-301-Lab8/Serial_UART_Transmitter.v Line: 77
+Warning (10240): Verilog HDL Always Construct warning at Serial_UART_Transmitter.v(77): inferring latch(es) for variable "tx_bit_counter", which holds its previous value in one or more paths through the always construct File: D:/College/SenrioYearTemp/EECS-301/EECS-301-Lab8/Serial_UART_Transmitter.v Line: 77
+Info (10041): Inferred latch for "tx_bit_counter[0]" at Serial_UART_Transmitter.v(77) File: D:/College/SenrioYearTemp/EECS-301/EECS-301-Lab8/Serial_UART_Transmitter.v Line: 77
+Info (10041): Inferred latch for "tx_bit_counter[1]" at Serial_UART_Transmitter.v(77) File: D:/College/SenrioYearTemp/EECS-301/EECS-301-Lab8/Serial_UART_Transmitter.v Line: 77
+Info (10041): Inferred latch for "tx_bit_counter[2]" at Serial_UART_Transmitter.v(77) File: D:/College/SenrioYearTemp/EECS-301/EECS-301-Lab8/Serial_UART_Transmitter.v Line: 77
+Info (10041): Inferred latch for "tx_bit_counter[3]" at Serial_UART_Transmitter.v(77) File: D:/College/SenrioYearTemp/EECS-301/EECS-301-Lab8/Serial_UART_Transmitter.v Line: 77
+Info (10041): Inferred latch for "tx_bit_counter[4]" at Serial_UART_Transmitter.v(77) File: D:/College/SenrioYearTemp/EECS-301/EECS-301-Lab8/Serial_UART_Transmitter.v Line: 77
+Info (10041): Inferred latch for "UART_TX" at Serial_UART_Transmitter.v(77) File: D:/College/SenrioYearTemp/EECS-301/EECS-301-Lab8/Serial_UART_Transmitter.v Line: 77
+Info (10041): Inferred latch for "TX_DONE" at Serial_UART_Transmitter.v(77) File: D:/College/SenrioYearTemp/EECS-301/EECS-301-Lab8/Serial_UART_Transmitter.v Line: 77
+Info (10041): Inferred latch for "State.S5" at Serial_UART_Transmitter.v(77) File: D:/College/SenrioYearTemp/EECS-301/EECS-301-Lab8/Serial_UART_Transmitter.v Line: 77
+Info (10041): Inferred latch for "State.S4" at Serial_UART_Transmitter.v(77) File: D:/College/SenrioYearTemp/EECS-301/EECS-301-Lab8/Serial_UART_Transmitter.v Line: 77
+Info (10041): Inferred latch for "State.S3" at Serial_UART_Transmitter.v(77) File: D:/College/SenrioYearTemp/EECS-301/EECS-301-Lab8/Serial_UART_Transmitter.v Line: 77
+Info (10041): Inferred latch for "State.S2" at Serial_UART_Transmitter.v(77) File: D:/College/SenrioYearTemp/EECS-301/EECS-301-Lab8/Serial_UART_Transmitter.v Line: 77
+Info (10041): Inferred latch for "State.S1" at Serial_UART_Transmitter.v(77) File: D:/College/SenrioYearTemp/EECS-301/EECS-301-Lab8/Serial_UART_Transmitter.v Line: 77
+Info (10041): Inferred latch for "State.S0" at Serial_UART_Transmitter.v(77) File: D:/College/SenrioYearTemp/EECS-301/EECS-301-Lab8/Serial_UART_Transmitter.v Line: 77
+Info (12128): Elaborating entity "Morse_Code_Module" for hierarchy "Morse_Code_Module:morse_code_tx" File: D:/College/SenrioYearTemp/EECS-301/EECS-301-Lab8/EECS301_Lab5_TopLevel.v Line: 230
+Info (12128): Elaborating entity "DROM_Nx32" for hierarchy "Morse_Code_Module:morse_code_tx|DROM_Nx32:MC_Encoding_ROM" File: D:/College/SenrioYearTemp/EECS-301/EECS-301-Lab8/Morse_Code_Module.v Line: 124
+Info (12128): Elaborating entity "Morse_Code_Transmitter" for hierarchy "Morse_Code_Module:morse_code_tx|Morse_Code_Transmitter:transmitter" File: D:/College/SenrioYearTemp/EECS-301/EECS-301-Lab8/Morse_Code_Module.v Line: 212
+Warning (10858): Verilog HDL warning at Morse_Code_Transmitter.v(38): object bit_count_reg used but never assigned File: D:/College/SenrioYearTemp/EECS-301/EECS-301-Lab8/Morse_Code_Transmitter.v Line: 38
+Warning (10036): Verilog HDL or VHDL warning at Morse_Code_Transmitter.v(41): object "bit_count_done" assigned a value but never read File: D:/College/SenrioYearTemp/EECS-301/EECS-301-Lab8/Morse_Code_Transmitter.v Line: 41
+Warning (10034): Output port "DONE" at Morse_Code_Transmitter.v(27) has no driver File: D:/College/SenrioYearTemp/EECS-301/EECS-301-Lab8/Morse_Code_Transmitter.v Line: 27
+Warning (10034): Output port "MC_OUT" at Morse_Code_Transmitter.v(28) has no driver File: D:/College/SenrioYearTemp/EECS-301/EECS-301-Lab8/Morse_Code_Transmitter.v Line: 28
+Info (12128): Elaborating entity "Buzzer_Tone_Generator" for hierarchy "Buzzer_Tone_Generator:tone_generator" File: D:/College/SenrioYearTemp/EECS-301/EECS-301-Lab8/EECS301_Lab5_TopLevel.v Line: 252
+Info (12128): Elaborating entity "Buzzer_PWM_Controller" for hierarchy "Buzzer_Tone_Generator:tone_generator|Buzzer_PWM_Controller:pwm_controller" File: D:/College/SenrioYearTemp/EECS-301/EECS-301-Lab8/Buzzer_Tone_Generator.v Line: 101
+Info (144001): Generated suppressed messages file D:/College/SenrioYearTemp/EECS-301/EECS-301-Lab8/output_files/Lab8.map.smsg
+Info: Quartus Prime Analysis & Elaboration was successful. 0 errors, 27 warnings
+    Info: Peak virtual memory: 4796 megabytes
+    Info: Processing ended: Fri Dec 07 13:03:10 2018
+    Info: Elapsed time: 00:00:12
+    Info: Total CPU time (on all processors): 00:00:27
+
+
++--------------------------------------------+
+; Analysis & Elaboration Suppressed Messages ;
++--------------------------------------------+
+The suppressed messages can be found in D:/College/SenrioYearTemp/EECS-301/EECS-301-Lab8/output_files/Lab8.map.smsg.
+
+

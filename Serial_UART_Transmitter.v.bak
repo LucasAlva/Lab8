@@ -35,7 +35,7 @@ module Serial_UART_Transmitter
 	// System Signals
 	input CLK,
 	input RESET
-);		
+);	
 
 	// Include Standard Functions header file (needed for bit_index())
 	`include "StdFunctions.vh"
@@ -63,94 +63,11 @@ module Serial_UART_Transmitter
 	
 	wire tx_bit_counter_done = tx_bit_counter[BIT_COUNT_WIDTH];
 	
-	//State variable
-	reg [5:0] State;
-	parameter S0=6'b000001, S1=6'b000010, S2=6'b000100, S3=6'b001000, S4=6'b010000, S5=6'b100000;
-	
 	
 	//
 	// Serial UART Transmitter State Machine
 	//
 
 	// !! Lab 5: Add the Serial UART Transmitter State Machine here !!
-	
-	always @(posedge CLK, posedge RESET)
-    begin
-		//clock_out <= clock;
-			
-        if (RESET) begin
-		  //assigning values at Reset
-            State <= S0;
-				TX_DONE <= 1'b0;
-				UART_TX <= 1'b1;
-				tx_frame_data_reg = {FRAME_WIDTH{1'b0}};
-				tx_bit_counter = BIT_COUNT_LOADVAL;
-				
-        end
-        
-            case (State)
-                S0: begin
-					 
-						 //S0 configurations
-						 TX_DONE <= 1'b0;
-						 
-						 //Next state
-						 if (TX_SEND)
-							State <= S1;
-                    
-                end
-                S1: begin
-					 
-						 //S1 configurations
-						 tx_frame_data_reg <= { TX_DATA, {START_BITS{1'b0}} };
-						 tx_bit_counter <= BIT_COUNT_LOADVAL;
-						 
-						 //Next state
-						 State <= S2;
-					
-						 end
-						 S2: begin
-						 
-						 //Wait for next baud tick
-						 if (BAUD_TICK) 
-							State <= S3;					 
-                    
-                end
-                S3: begin
-					 
-						 //S3 Configurations
-						 UART_TX <= { tx_frame_data_reg, {START_BITS{1'b0}} };
-						 //tx_bit_counter_done <= 1'b0;
-						 
-						 //Check bit counter done for next state
-						 if (tx_bit_counter_done)
-							State <= S5;
-						 
-						 else 
-							State <= S4;
-                    
-                end
-					 S4: begin
-					 
-						 //S4 configurations
-						 tx_frame_data_reg <= { 1'b1, tx_frame_data_reg[FRAME_WIDTH-1:1] };
-						 tx_bit_counter <= tx_bit_counter + 1;
-						 
-						 //Next state
-						 State <= S2;
-                    
-                end
-					 S5: begin
-					 
-						 //S5 configurations
-						 TX_DONE <= 1'b1;
-						 
-						 //Next state
-						 State <= S0;
-                    
-                end
-            endcase
-        
-    end
 
 endmodule

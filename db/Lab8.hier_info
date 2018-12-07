@@ -1,0 +1,769 @@
+|EECS301_Lab5_TopLevel
+CLOCK_50 => CLOCK_50.IN8
+HEX0[0] << <VCC>
+HEX0[1] << <VCC>
+HEX0[2] << <VCC>
+HEX0[3] << <VCC>
+HEX0[4] << <VCC>
+HEX0[5] << <VCC>
+HEX0[6] << <VCC>
+HEX1[0] << PS2_Keyboard_Display_Controller:seg_display_keychar_status.HEX0
+HEX1[1] << PS2_Keyboard_Display_Controller:seg_display_keychar_status.HEX0
+HEX1[2] << PS2_Keyboard_Display_Controller:seg_display_keychar_status.HEX0
+HEX1[3] << PS2_Keyboard_Display_Controller:seg_display_keychar_status.HEX0
+HEX1[4] << PS2_Keyboard_Display_Controller:seg_display_keychar_status.HEX0
+HEX1[5] << PS2_Keyboard_Display_Controller:seg_display_keychar_status.HEX0
+HEX1[6] << PS2_Keyboard_Display_Controller:seg_display_keychar_status.HEX0
+HEX2[0] << PS2_Keyboard_Display_Controller:seg_display_keychar_status.HEX1
+HEX2[1] << PS2_Keyboard_Display_Controller:seg_display_keychar_status.HEX1
+HEX2[2] << PS2_Keyboard_Display_Controller:seg_display_keychar_status.HEX1
+HEX2[3] << PS2_Keyboard_Display_Controller:seg_display_keychar_status.HEX1
+HEX2[4] << PS2_Keyboard_Display_Controller:seg_display_keychar_status.HEX1
+HEX2[5] << PS2_Keyboard_Display_Controller:seg_display_keychar_status.HEX1
+HEX2[6] << PS2_Keyboard_Display_Controller:seg_display_keychar_status.HEX1
+HEX3[0] << <VCC>
+HEX3[1] << <VCC>
+HEX3[2] << <VCC>
+HEX3[3] << <VCC>
+HEX3[4] << <VCC>
+HEX3[5] << <VCC>
+HEX3[6] << <VCC>
+HEX4[0] << PS2_Keyboard_Display_Controller:seg_display_keycode_status.HEX0
+HEX4[1] << PS2_Keyboard_Display_Controller:seg_display_keycode_status.HEX0
+HEX4[2] << PS2_Keyboard_Display_Controller:seg_display_keycode_status.HEX0
+HEX4[3] << PS2_Keyboard_Display_Controller:seg_display_keycode_status.HEX0
+HEX4[4] << PS2_Keyboard_Display_Controller:seg_display_keycode_status.HEX0
+HEX4[5] << PS2_Keyboard_Display_Controller:seg_display_keycode_status.HEX0
+HEX4[6] << PS2_Keyboard_Display_Controller:seg_display_keycode_status.HEX0
+HEX5[0] << PS2_Keyboard_Display_Controller:seg_display_keycode_status.HEX1
+HEX5[1] << PS2_Keyboard_Display_Controller:seg_display_keycode_status.HEX1
+HEX5[2] << PS2_Keyboard_Display_Controller:seg_display_keycode_status.HEX1
+HEX5[3] << PS2_Keyboard_Display_Controller:seg_display_keycode_status.HEX1
+HEX5[4] << PS2_Keyboard_Display_Controller:seg_display_keycode_status.HEX1
+HEX5[5] << PS2_Keyboard_Display_Controller:seg_display_keycode_status.HEX1
+HEX5[6] << PS2_Keyboard_Display_Controller:seg_display_keycode_status.HEX1
+LEDR[0] << <GND>
+LEDR[1] << <GND>
+LEDR[2] << <GND>
+LEDR[3] << <GND>
+LEDR[4] << <GND>
+LEDR[5] << <GND>
+LEDR[6] << <GND>
+LEDR[7] << <GND>
+LEDR[8] << <GND>
+LEDR[9] << <GND>
+SW[0] => SW[0].IN1
+SW[1] => SW[1].IN1
+PS2_CLK => PS2_CLK.IN1
+PS2_DAT => PS2_DAT.IN1
+PS2_CLK_MON << PS2_Keyboard_Module:keyboard_interface.PS2_CLK_MONITOR
+PS2_DAT_MON << PS2_Keyboard_Module:keyboard_interface.PS2_DATA_MONITOR
+UART0_OUT << Serial_UART_Keypress_Reporter:uart_keypress_reporter.UART_TX
+PIEZO << Buzzer_Tone_Generator:tone_generator.TONE_OUT
+TP[0] => ~NO_FANOUT~
+TP[1] => ~NO_FANOUT~
+TP[2] => ~NO_FANOUT~
+TP[3] => ~NO_FANOUT~
+TP[4] => ~NO_FANOUT~
+TP[5] => ~NO_FANOUT~
+TP[6] => ~NO_FANOUT~
+TP[7] => ~NO_FANOUT~
+TP[8] => ~NO_FANOUT~
+TP[9] => ~NO_FANOUT~
+TP[10] => ~NO_FANOUT~
+TP[11] => ~NO_FANOUT~
+TP[12] => ~NO_FANOUT~
+TP[13] => ~NO_FANOUT~
+
+
+|EECS301_Lab5_TopLevel|System_Reset_Module:system_reset
+PLL_LOCKED => reset_reg[0].ACLR
+PLL_LOCKED => reset_reg[1].ACLR
+REF_CLK => RESET~reg0.CLK
+REF_CLK => reset_counter[0].CLK
+REF_CLK => reset_counter[1].CLK
+REF_CLK => reset_counter[2].CLK
+REF_CLK => reset_counter[3].CLK
+REF_CLK => reset_counter[4].CLK
+REF_CLK => reset_counter[5].CLK
+REF_CLK => reset_reg[0].CLK
+REF_CLK => reset_reg[1].CLK
+RESET <= RESET~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|EECS301_Lab5_TopLevel|Switch_Synchronizer_Bank:switch_synchronizer
+SIG_IN[0] => SIG_IN[0].IN1
+SIG_IN[1] => SIG_IN[1].IN1
+SIG_OUT[0] <= Switch_Debounce_Synchronizer:sw_sync_gen[0].sw_synchronizer.SIG_OUT
+SIG_OUT[1] <= Switch_Debounce_Synchronizer:sw_sync_gen[1].sw_synchronizer.SIG_OUT
+CLK => CLK.IN2
+
+
+|EECS301_Lab5_TopLevel|Switch_Synchronizer_Bank:switch_synchronizer|Switch_Debounce_Synchronizer:sw_sync_gen[0].sw_synchronizer
+SIG_IN => SIG_IN.IN1
+SIG_OUT <= SIG_OUT~reg0.DB_MAX_OUTPUT_PORT_TYPE
+CLK => CLK.IN1
+
+
+|EECS301_Lab5_TopLevel|Switch_Synchronizer_Bank:switch_synchronizer|Switch_Debounce_Synchronizer:sw_sync_gen[0].sw_synchronizer|CDC_Input_Synchronizer:sw_synchronizer
+ASYNC_IN => async_reg.DATAIN
+SYNC_OUT <= sync_reg[0].DB_MAX_OUTPUT_PORT_TYPE
+CLK => sync_reg[0].CLK
+CLK => async_reg.CLK
+
+
+|EECS301_Lab5_TopLevel|Switch_Synchronizer_Bank:switch_synchronizer|Switch_Debounce_Synchronizer:sw_sync_gen[1].sw_synchronizer
+SIG_IN => SIG_IN.IN1
+SIG_OUT <= SIG_OUT~reg0.DB_MAX_OUTPUT_PORT_TYPE
+CLK => CLK.IN1
+
+
+|EECS301_Lab5_TopLevel|Switch_Synchronizer_Bank:switch_synchronizer|Switch_Debounce_Synchronizer:sw_sync_gen[1].sw_synchronizer|CDC_Input_Synchronizer:sw_synchronizer
+ASYNC_IN => async_reg.DATAIN
+SYNC_OUT <= sync_reg[0].DB_MAX_OUTPUT_PORT_TYPE
+CLK => sync_reg[0].CLK
+CLK => async_reg.CLK
+
+
+|EECS301_Lab5_TopLevel|PS2_Keyboard_Module:keyboard_interface
+PS2_CLK => PS2_CLK.IN1
+PS2_DATA => PS2_DATA.IN1
+KEY_PRESSED <= PS2_Keyboard_Keypress_Tracker:kb_keypress_tracker.KEY_PRESSED
+KEY_KEYCODE[0] <= PS2_Keyboard_Keypress_Tracker:kb_keypress_tracker.KEY_KEYCODE
+KEY_KEYCODE[1] <= PS2_Keyboard_Keypress_Tracker:kb_keypress_tracker.KEY_KEYCODE
+KEY_KEYCODE[2] <= PS2_Keyboard_Keypress_Tracker:kb_keypress_tracker.KEY_KEYCODE
+KEY_KEYCODE[3] <= PS2_Keyboard_Keypress_Tracker:kb_keypress_tracker.KEY_KEYCODE
+KEY_KEYCODE[4] <= PS2_Keyboard_Keypress_Tracker:kb_keypress_tracker.KEY_KEYCODE
+KEY_KEYCODE[5] <= PS2_Keyboard_Keypress_Tracker:kb_keypress_tracker.KEY_KEYCODE
+KEY_KEYCODE[6] <= PS2_Keyboard_Keypress_Tracker:kb_keypress_tracker.KEY_KEYCODE
+KEY_KEYCODE[7] <= PS2_Keyboard_Keypress_Tracker:kb_keypress_tracker.KEY_KEYCODE
+KEY_KEYCHAR[0] <= PS2_Keyboard_Keypress_Tracker:kb_keypress_tracker.KEY_KEYCHAR
+KEY_KEYCHAR[1] <= PS2_Keyboard_Keypress_Tracker:kb_keypress_tracker.KEY_KEYCHAR
+KEY_KEYCHAR[2] <= PS2_Keyboard_Keypress_Tracker:kb_keypress_tracker.KEY_KEYCHAR
+KEY_KEYCHAR[3] <= PS2_Keyboard_Keypress_Tracker:kb_keypress_tracker.KEY_KEYCHAR
+KEY_KEYCHAR[4] <= PS2_Keyboard_Keypress_Tracker:kb_keypress_tracker.KEY_KEYCHAR
+KEY_KEYCHAR[5] <= PS2_Keyboard_Keypress_Tracker:kb_keypress_tracker.KEY_KEYCHAR
+KEY_KEYCHAR[6] <= PS2_Keyboard_Keypress_Tracker:kb_keypress_tracker.KEY_KEYCHAR
+KEY_KEYCHAR[7] <= PS2_Keyboard_Keypress_Tracker:kb_keypress_tracker.KEY_KEYCHAR
+PS2_CLK_MONITOR <= ps2_clk_sync.DB_MAX_OUTPUT_PORT_TYPE
+PS2_DATA_MONITOR <= ps2_data_sync.DB_MAX_OUTPUT_PORT_TYPE
+PS2_KEYCODE_MONITOR[0] <= ps2_key_data[0].DB_MAX_OUTPUT_PORT_TYPE
+PS2_KEYCODE_MONITOR[1] <= ps2_key_data[1].DB_MAX_OUTPUT_PORT_TYPE
+PS2_KEYCODE_MONITOR[2] <= ps2_key_data[2].DB_MAX_OUTPUT_PORT_TYPE
+PS2_KEYCODE_MONITOR[3] <= ps2_key_data[3].DB_MAX_OUTPUT_PORT_TYPE
+PS2_KEYCODE_MONITOR[4] <= ps2_key_data[4].DB_MAX_OUTPUT_PORT_TYPE
+PS2_KEYCODE_MONITOR[5] <= ps2_key_data[5].DB_MAX_OUTPUT_PORT_TYPE
+PS2_KEYCODE_MONITOR[6] <= ps2_key_data[6].DB_MAX_OUTPUT_PORT_TYPE
+PS2_KEYCODE_MONITOR[7] <= ps2_key_data[7].DB_MAX_OUTPUT_PORT_TYPE
+CLK => CLK.IN4
+RESET => RESET.IN3
+
+
+|EECS301_Lab5_TopLevel|PS2_Keyboard_Module:keyboard_interface|PS2_Bus_Synchronizer:PS2_Bus_Sync
+PS2_CLK_IN => PS2_CLK_IN.IN1
+PS2_DATA_IN => PS2_DATA_IN.IN1
+PS2_CLK_OUT <= Switch_Debounce_Synchronizer:PS2_CLK_Sync.SIG_OUT
+PS2_DATA_OUT <= Switch_Debounce_Synchronizer:PS2_DATA_Sync.SIG_OUT
+CLK => CLK.IN2
+
+
+|EECS301_Lab5_TopLevel|PS2_Keyboard_Module:keyboard_interface|PS2_Bus_Synchronizer:PS2_Bus_Sync|Switch_Debounce_Synchronizer:PS2_CLK_Sync
+SIG_IN => SIG_IN.IN1
+SIG_OUT <= SIG_OUT~reg0.DB_MAX_OUTPUT_PORT_TYPE
+CLK => CLK.IN1
+
+
+|EECS301_Lab5_TopLevel|PS2_Keyboard_Module:keyboard_interface|PS2_Bus_Synchronizer:PS2_Bus_Sync|Switch_Debounce_Synchronizer:PS2_CLK_Sync|CDC_Input_Synchronizer:sw_synchronizer
+ASYNC_IN => async_reg.DATAIN
+SYNC_OUT <= sync_reg[0].DB_MAX_OUTPUT_PORT_TYPE
+CLK => sync_reg[0].CLK
+CLK => async_reg.CLK
+
+
+|EECS301_Lab5_TopLevel|PS2_Keyboard_Module:keyboard_interface|PS2_Bus_Synchronizer:PS2_Bus_Sync|Switch_Debounce_Synchronizer:PS2_DATA_Sync
+SIG_IN => SIG_IN.IN1
+SIG_OUT <= SIG_OUT~reg0.DB_MAX_OUTPUT_PORT_TYPE
+CLK => CLK.IN1
+
+
+|EECS301_Lab5_TopLevel|PS2_Keyboard_Module:keyboard_interface|PS2_Bus_Synchronizer:PS2_Bus_Sync|Switch_Debounce_Synchronizer:PS2_DATA_Sync|CDC_Input_Synchronizer:sw_synchronizer
+ASYNC_IN => async_reg.DATAIN
+SYNC_OUT <= sync_reg[0].DB_MAX_OUTPUT_PORT_TYPE
+CLK => sync_reg[0].CLK
+CLK => async_reg.CLK
+
+
+|EECS301_Lab5_TopLevel|PS2_Keyboard_Module:keyboard_interface|PS2_Keyboard_Serial_Controller:kb_serial_controller
+PS2_CLK_SYNC => ~NO_FANOUT~
+PS2_DATA_SYNC => ~NO_FANOUT~
+PS2_KEY_READY <= <GND>
+PS2_KEY_DATA[0] <= <GND>
+PS2_KEY_DATA[1] <= <GND>
+PS2_KEY_DATA[2] <= <GND>
+PS2_KEY_DATA[3] <= <GND>
+PS2_KEY_DATA[4] <= <GND>
+PS2_KEY_DATA[5] <= <GND>
+PS2_KEY_DATA[6] <= <GND>
+PS2_KEY_DATA[7] <= <GND>
+CLK => ~NO_FANOUT~
+RESET => ~NO_FANOUT~
+
+
+|EECS301_Lab5_TopLevel|PS2_Keyboard_Module:keyboard_interface|PS2_Keyboard_Keycode_Parser:kb_keycode_parser
+KEY_READY => ~NO_FANOUT~
+KEY_DATA[0] => ~NO_FANOUT~
+KEY_DATA[1] => ~NO_FANOUT~
+KEY_DATA[2] => ~NO_FANOUT~
+KEY_DATA[3] => ~NO_FANOUT~
+KEY_DATA[4] => ~NO_FANOUT~
+KEY_DATA[5] => ~NO_FANOUT~
+KEY_DATA[6] => ~NO_FANOUT~
+KEY_DATA[7] => ~NO_FANOUT~
+KEY_PRESSED_MAKE <= <GND>
+KEY_PRESSED_BREAK <= <GND>
+KEY_PRESSED_DATA[0] <= <GND>
+KEY_PRESSED_DATA[1] <= <GND>
+KEY_PRESSED_DATA[2] <= <GND>
+KEY_PRESSED_DATA[3] <= <GND>
+KEY_PRESSED_DATA[4] <= <GND>
+KEY_PRESSED_DATA[5] <= <GND>
+KEY_PRESSED_DATA[6] <= <GND>
+KEY_PRESSED_DATA[7] <= <GND>
+CLK => ~NO_FANOUT~
+RESET => ~NO_FANOUT~
+
+
+|EECS301_Lab5_TopLevel|PS2_Keyboard_Module:keyboard_interface|PS2_Keyboard_Keypress_Tracker:kb_keypress_tracker
+KEY_MAKE => ~NO_FANOUT~
+KEY_BREAK => ~NO_FANOUT~
+KEY_DATA[0] => ~NO_FANOUT~
+KEY_DATA[1] => ~NO_FANOUT~
+KEY_DATA[2] => ~NO_FANOUT~
+KEY_DATA[3] => ~NO_FANOUT~
+KEY_DATA[4] => ~NO_FANOUT~
+KEY_DATA[5] => ~NO_FANOUT~
+KEY_DATA[6] => ~NO_FANOUT~
+KEY_DATA[7] => ~NO_FANOUT~
+KEY_PRESSED <= <GND>
+KEY_KEYCODE[0] <= <GND>
+KEY_KEYCODE[1] <= <GND>
+KEY_KEYCODE[2] <= <GND>
+KEY_KEYCODE[3] <= <GND>
+KEY_KEYCODE[4] <= <GND>
+KEY_KEYCODE[5] <= <GND>
+KEY_KEYCODE[6] <= <GND>
+KEY_KEYCODE[7] <= <GND>
+KEY_KEYCHAR[0] <= <GND>
+KEY_KEYCHAR[1] <= <GND>
+KEY_KEYCHAR[2] <= <GND>
+KEY_KEYCHAR[3] <= <GND>
+KEY_KEYCHAR[4] <= <GND>
+KEY_KEYCHAR[5] <= <GND>
+KEY_KEYCHAR[6] <= <GND>
+KEY_KEYCHAR[7] <= <GND>
+CLK => CLK.IN1
+RESET => ~NO_FANOUT~
+
+
+|EECS301_Lab5_TopLevel|PS2_Keyboard_Module:keyboard_interface|PS2_Keyboard_Keypress_Tracker:kb_keypress_tracker|PS2_Keycode_Transcoder:keycode_transcoder
+KEY_CODE[0] => Decoder0.IN7
+KEY_CODE[1] => Decoder0.IN6
+KEY_CODE[2] => Decoder0.IN5
+KEY_CODE[3] => Decoder0.IN4
+KEY_CODE[4] => Decoder0.IN3
+KEY_CODE[5] => Decoder0.IN2
+KEY_CODE[6] => Decoder0.IN1
+KEY_CODE[7] => Decoder0.IN0
+KEY_CHAR[0] <= KEY_CHAR[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+KEY_CHAR[1] <= KEY_CHAR[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+KEY_CHAR[2] <= KEY_CHAR[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+KEY_CHAR[3] <= KEY_CHAR[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+KEY_CHAR[4] <= KEY_CHAR[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+KEY_CHAR[5] <= KEY_CHAR[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+KEY_CHAR[6] <= KEY_CHAR[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+KEY_CHAR[7] <= KEY_CHAR[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+CLK => KEY_CHAR[0]~reg0.CLK
+CLK => KEY_CHAR[1]~reg0.CLK
+CLK => KEY_CHAR[2]~reg0.CLK
+CLK => KEY_CHAR[3]~reg0.CLK
+CLK => KEY_CHAR[4]~reg0.CLK
+CLK => KEY_CHAR[5]~reg0.CLK
+CLK => KEY_CHAR[6]~reg0.CLK
+CLK => KEY_CHAR[7]~reg0.CLK
+
+
+|EECS301_Lab5_TopLevel|PS2_Keyboard_Display_Controller:seg_display_keycode_status
+KEY_PRESSED => ~NO_FANOUT~
+KEY_DATA[0] => KEY_DATA[0].IN1
+KEY_DATA[1] => KEY_DATA[1].IN1
+KEY_DATA[2] => KEY_DATA[2].IN1
+KEY_DATA[3] => KEY_DATA[3].IN1
+KEY_DATA[4] => KEY_DATA[4].IN1
+KEY_DATA[5] => KEY_DATA[5].IN1
+KEY_DATA[6] => KEY_DATA[6].IN1
+KEY_DATA[7] => KEY_DATA[7].IN1
+HEX0[0] <= HEX0[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+HEX0[1] <= HEX0[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+HEX0[2] <= HEX0[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+HEX0[3] <= HEX0[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+HEX0[4] <= HEX0[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+HEX0[5] <= HEX0[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+HEX0[6] <= HEX0[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+HEX1[0] <= HEX1[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+HEX1[1] <= HEX1[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+HEX1[2] <= HEX1[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+HEX1[3] <= HEX1[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+HEX1[4] <= HEX1[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+HEX1[5] <= HEX1[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+HEX1[6] <= HEX1[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+CLK => CLK.IN1
+
+
+|EECS301_Lab5_TopLevel|PS2_Keyboard_Display_Controller:seg_display_keycode_status|Hex_Segment_Decoder:segment_transcoder
+HEX_IN[0] => Decoder0.IN3
+HEX_IN[1] => Decoder0.IN2
+HEX_IN[2] => Decoder0.IN1
+HEX_IN[3] => Decoder0.IN0
+HEX_IN[4] => Decoder1.IN3
+HEX_IN[5] => Decoder1.IN2
+HEX_IN[6] => Decoder1.IN1
+HEX_IN[7] => Decoder1.IN0
+SEG_OUT[0] <= SEG_OUT[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+SEG_OUT[1] <= SEG_OUT[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+SEG_OUT[2] <= SEG_OUT[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+SEG_OUT[3] <= SEG_OUT[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+SEG_OUT[4] <= SEG_OUT[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+SEG_OUT[5] <= SEG_OUT[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+SEG_OUT[6] <= SEG_OUT[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+SEG_OUT[7] <= SEG_OUT[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+SEG_OUT[8] <= SEG_OUT[8]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+SEG_OUT[9] <= SEG_OUT[9]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+SEG_OUT[10] <= SEG_OUT[10]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+SEG_OUT[11] <= SEG_OUT[11]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+SEG_OUT[12] <= SEG_OUT[12]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+SEG_OUT[13] <= SEG_OUT[13]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+CLK => SEG_OUT[7]~reg0.CLK
+CLK => SEG_OUT[8]~reg0.CLK
+CLK => SEG_OUT[9]~reg0.CLK
+CLK => SEG_OUT[10]~reg0.CLK
+CLK => SEG_OUT[11]~reg0.CLK
+CLK => SEG_OUT[12]~reg0.CLK
+CLK => SEG_OUT[13]~reg0.CLK
+CLK => SEG_OUT[0]~reg0.CLK
+CLK => SEG_OUT[1]~reg0.CLK
+CLK => SEG_OUT[2]~reg0.CLK
+CLK => SEG_OUT[3]~reg0.CLK
+CLK => SEG_OUT[4]~reg0.CLK
+CLK => SEG_OUT[5]~reg0.CLK
+CLK => SEG_OUT[6]~reg0.CLK
+
+
+|EECS301_Lab5_TopLevel|PS2_Keyboard_Display_Controller:seg_display_keychar_status
+KEY_PRESSED => ~NO_FANOUT~
+KEY_DATA[0] => KEY_DATA[0].IN1
+KEY_DATA[1] => KEY_DATA[1].IN1
+KEY_DATA[2] => KEY_DATA[2].IN1
+KEY_DATA[3] => KEY_DATA[3].IN1
+KEY_DATA[4] => KEY_DATA[4].IN1
+KEY_DATA[5] => KEY_DATA[5].IN1
+KEY_DATA[6] => KEY_DATA[6].IN1
+KEY_DATA[7] => KEY_DATA[7].IN1
+HEX0[0] <= HEX0[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+HEX0[1] <= HEX0[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+HEX0[2] <= HEX0[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+HEX0[3] <= HEX0[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+HEX0[4] <= HEX0[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+HEX0[5] <= HEX0[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+HEX0[6] <= HEX0[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+HEX1[0] <= HEX1[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+HEX1[1] <= HEX1[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+HEX1[2] <= HEX1[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+HEX1[3] <= HEX1[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+HEX1[4] <= HEX1[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+HEX1[5] <= HEX1[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+HEX1[6] <= HEX1[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+CLK => CLK.IN1
+
+
+|EECS301_Lab5_TopLevel|PS2_Keyboard_Display_Controller:seg_display_keychar_status|Hex_Segment_Decoder:segment_transcoder
+HEX_IN[0] => Decoder0.IN3
+HEX_IN[1] => Decoder0.IN2
+HEX_IN[2] => Decoder0.IN1
+HEX_IN[3] => Decoder0.IN0
+HEX_IN[4] => Decoder1.IN3
+HEX_IN[5] => Decoder1.IN2
+HEX_IN[6] => Decoder1.IN1
+HEX_IN[7] => Decoder1.IN0
+SEG_OUT[0] <= SEG_OUT[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+SEG_OUT[1] <= SEG_OUT[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+SEG_OUT[2] <= SEG_OUT[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+SEG_OUT[3] <= SEG_OUT[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+SEG_OUT[4] <= SEG_OUT[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+SEG_OUT[5] <= SEG_OUT[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+SEG_OUT[6] <= SEG_OUT[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+SEG_OUT[7] <= SEG_OUT[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+SEG_OUT[8] <= SEG_OUT[8]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+SEG_OUT[9] <= SEG_OUT[9]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+SEG_OUT[10] <= SEG_OUT[10]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+SEG_OUT[11] <= SEG_OUT[11]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+SEG_OUT[12] <= SEG_OUT[12]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+SEG_OUT[13] <= SEG_OUT[13]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+CLK => SEG_OUT[7]~reg0.CLK
+CLK => SEG_OUT[8]~reg0.CLK
+CLK => SEG_OUT[9]~reg0.CLK
+CLK => SEG_OUT[10]~reg0.CLK
+CLK => SEG_OUT[11]~reg0.CLK
+CLK => SEG_OUT[12]~reg0.CLK
+CLK => SEG_OUT[13]~reg0.CLK
+CLK => SEG_OUT[0]~reg0.CLK
+CLK => SEG_OUT[1]~reg0.CLK
+CLK => SEG_OUT[2]~reg0.CLK
+CLK => SEG_OUT[3]~reg0.CLK
+CLK => SEG_OUT[4]~reg0.CLK
+CLK => SEG_OUT[5]~reg0.CLK
+CLK => SEG_OUT[6]~reg0.CLK
+
+
+|EECS301_Lab5_TopLevel|Serial_UART_Keypress_Reporter:uart_keypress_reporter
+UART_TX <= Serial_UART_Transmitter:uart_tx.UART_TX
+TX_SEND => TX_SEND.IN1
+TX_DATA[0] => TX_DATA[0].IN1
+TX_DATA[1] => TX_DATA[1].IN1
+TX_DATA[2] => TX_DATA[2].IN1
+TX_DATA[3] => TX_DATA[3].IN1
+TX_DATA[4] => TX_DATA[4].IN1
+TX_DATA[5] => TX_DATA[5].IN1
+TX_DATA[6] => TX_DATA[6].IN1
+TX_DATA[7] => TX_DATA[7].IN1
+TX_DONE <= Serial_UART_Transmitter:uart_tx.TX_DONE
+CLK => CLK.IN2
+RESET => RESET.IN2
+
+
+|EECS301_Lab5_TopLevel|Serial_UART_Keypress_Reporter:uart_keypress_reporter|Serial_UART_Baud_Generator:baud_generator
+BAUD_RATE_TICK <= BAUD_RATE_TICK~reg0.DB_MAX_OUTPUT_PORT_TYPE
+BAUD_SAMPLE_TICK <= BAUD_SAMPLE_TICK~reg0.DB_MAX_OUTPUT_PORT_TYPE
+CLK => BAUD_SAMPLE_TICK~reg0.CLK
+CLK => prev_sample_rate_rollover.CLK
+CLK => BAUD_RATE_TICK~reg0.CLK
+CLK => prev_full_rate_rollover.CLK
+CLK => nco_accumulator_reg[0].CLK
+CLK => nco_accumulator_reg[1].CLK
+CLK => nco_accumulator_reg[2].CLK
+CLK => nco_accumulator_reg[3].CLK
+CLK => nco_accumulator_reg[4].CLK
+CLK => nco_accumulator_reg[5].CLK
+CLK => nco_accumulator_reg[6].CLK
+CLK => nco_accumulator_reg[7].CLK
+CLK => nco_accumulator_reg[8].CLK
+CLK => nco_accumulator_reg[9].CLK
+CLK => nco_accumulator_reg[10].CLK
+CLK => nco_accumulator_reg[11].CLK
+CLK => nco_accumulator_reg[12].CLK
+CLK => nco_accumulator_reg[13].CLK
+CLK => nco_accumulator_reg[14].CLK
+CLK => nco_accumulator_reg[15].CLK
+RESET => nco_accumulator_reg[0].ACLR
+RESET => nco_accumulator_reg[1].ACLR
+RESET => nco_accumulator_reg[2].ACLR
+RESET => nco_accumulator_reg[3].ACLR
+RESET => nco_accumulator_reg[4].ACLR
+RESET => nco_accumulator_reg[5].ACLR
+RESET => nco_accumulator_reg[6].ACLR
+RESET => nco_accumulator_reg[7].ACLR
+RESET => nco_accumulator_reg[8].ACLR
+RESET => nco_accumulator_reg[9].ACLR
+RESET => nco_accumulator_reg[10].ACLR
+RESET => nco_accumulator_reg[11].ACLR
+RESET => nco_accumulator_reg[12].ACLR
+RESET => nco_accumulator_reg[13].ACLR
+RESET => nco_accumulator_reg[14].ACLR
+RESET => nco_accumulator_reg[15].ACLR
+
+
+|EECS301_Lab5_TopLevel|Serial_UART_Keypress_Reporter:uart_keypress_reporter|Serial_UART_Transmitter:uart_tx
+TX_SEND => State.S5.IN0
+TX_SEND => Selector15.IN0
+TX_SEND => Selector16.IN3
+TX_DATA[0] => ~NO_FANOUT~
+TX_DATA[1] => ~NO_FANOUT~
+TX_DATA[2] => ~NO_FANOUT~
+TX_DATA[3] => ~NO_FANOUT~
+TX_DATA[4] => ~NO_FANOUT~
+TX_DATA[5] => ~NO_FANOUT~
+TX_DATA[6] => ~NO_FANOUT~
+TX_DATA[7] => ~NO_FANOUT~
+TX_DONE <= TX_DONE$latch.DB_MAX_OUTPUT_PORT_TYPE
+UART_TX <= UART_TX$latch.DB_MAX_OUTPUT_PORT_TYPE
+BAUD_TICK => State.S5.IN0
+BAUD_TICK => Selector11.IN2
+BAUD_TICK => Selector16.IN4
+CLK => ~NO_FANOUT~
+RESET => tx_bit_counter.OUTPUTSELECT
+RESET => tx_bit_counter.OUTPUTSELECT
+RESET => tx_bit_counter.OUTPUTSELECT
+RESET => tx_bit_counter.OUTPUTSELECT
+RESET => tx_bit_counter.OUTPUTSELECT
+RESET => UART_TX.IN1
+RESET => Selector0.IN2
+RESET => State.S5.IN1
+RESET => State.S5.IN1
+RESET => Selector2.IN0
+
+
+|EECS301_Lab5_TopLevel|Morse_Code_Module:morse_code_tx
+ENABLE => rate_counter.OUTPUTSELECT
+ENABLE => rate_counter.OUTPUTSELECT
+ENABLE => rate_counter.OUTPUTSELECT
+ENABLE => rate_counter.OUTPUTSELECT
+ENABLE => rate_counter.OUTPUTSELECT
+ENABLE => rate_counter.OUTPUTSELECT
+ENABLE => rate_counter.OUTPUTSELECT
+ENABLE => rate_counter.OUTPUTSELECT
+ENABLE => rate_counter.OUTPUTSELECT
+ENABLE => rate_counter.OUTPUTSELECT
+ENABLE => rate_counter.OUTPUTSELECT
+ENABLE => rate_counter.OUTPUTSELECT
+ENABLE => rate_counter.OUTPUTSELECT
+ENABLE => rate_counter.OUTPUTSELECT
+ENABLE => rate_counter.OUTPUTSELECT
+ENABLE => rate_counter.OUTPUTSELECT
+ENABLE => rate_counter.OUTPUTSELECT
+ENABLE => rate_counter.OUTPUTSELECT
+ENABLE => rate_counter.OUTPUTSELECT
+ENABLE => rate_counter.OUTPUTSELECT
+ENABLE => rate_counter.OUTPUTSELECT
+ENABLE => rate_counter.OUTPUTSELECT
+ENABLE => rate_counter.OUTPUTSELECT
+SEND => SEND.IN1
+CHAR[0] => Decoder0.IN7
+CHAR[1] => Decoder0.IN6
+CHAR[2] => Decoder0.IN5
+CHAR[3] => Decoder0.IN4
+CHAR[4] => Decoder0.IN3
+CHAR[5] => Decoder0.IN2
+CHAR[6] => Decoder0.IN1
+CHAR[7] => Decoder0.IN0
+DONE <= Morse_Code_Transmitter:transmitter.DONE
+MC_OUT <= Morse_Code_Transmitter:transmitter.MC_OUT
+CLK => CLK.IN2
+RESET => RESET.IN1
+
+
+|EECS301_Lab5_TopLevel|Morse_Code_Module:morse_code_tx|DROM_Nx32:MC_Encoding_ROM
+ADDR[0] => rom.RADDR
+ADDR[1] => rom.RADDR1
+ADDR[2] => rom.RADDR2
+ADDR[3] => rom.RADDR3
+ADDR[4] => rom.RADDR4
+DATA_OUT[0] <= DATA_OUT[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+DATA_OUT[1] <= DATA_OUT[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+DATA_OUT[2] <= DATA_OUT[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+DATA_OUT[3] <= DATA_OUT[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+DATA_OUT[4] <= DATA_OUT[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+DATA_OUT[5] <= DATA_OUT[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+DATA_OUT[6] <= DATA_OUT[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+DATA_OUT[7] <= DATA_OUT[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+DATA_OUT[8] <= DATA_OUT[8]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+DATA_OUT[9] <= DATA_OUT[9]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+DATA_OUT[10] <= DATA_OUT[10]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+DATA_OUT[11] <= DATA_OUT[11]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+DATA_OUT[12] <= DATA_OUT[12]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+DATA_OUT[13] <= DATA_OUT[13]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+DATA_OUT[14] <= DATA_OUT[14]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+DATA_OUT[15] <= DATA_OUT[15]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+DATA_OUT[16] <= DATA_OUT[16]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+CLK => rom.we_a.CLK
+CLK => rom.waddr_a[4].CLK
+CLK => rom.waddr_a[3].CLK
+CLK => rom.waddr_a[2].CLK
+CLK => rom.waddr_a[1].CLK
+CLK => rom.waddr_a[0].CLK
+CLK => rom.data_a[16].CLK
+CLK => rom.data_a[15].CLK
+CLK => rom.data_a[14].CLK
+CLK => rom.data_a[13].CLK
+CLK => rom.data_a[12].CLK
+CLK => rom.data_a[11].CLK
+CLK => rom.data_a[10].CLK
+CLK => rom.data_a[9].CLK
+CLK => rom.data_a[8].CLK
+CLK => rom.data_a[7].CLK
+CLK => rom.data_a[6].CLK
+CLK => rom.data_a[5].CLK
+CLK => rom.data_a[4].CLK
+CLK => rom.data_a[3].CLK
+CLK => rom.data_a[2].CLK
+CLK => rom.data_a[1].CLK
+CLK => rom.data_a[0].CLK
+CLK => DATA_OUT[0]~reg0.CLK
+CLK => DATA_OUT[1]~reg0.CLK
+CLK => DATA_OUT[2]~reg0.CLK
+CLK => DATA_OUT[3]~reg0.CLK
+CLK => DATA_OUT[4]~reg0.CLK
+CLK => DATA_OUT[5]~reg0.CLK
+CLK => DATA_OUT[6]~reg0.CLK
+CLK => DATA_OUT[7]~reg0.CLK
+CLK => DATA_OUT[8]~reg0.CLK
+CLK => DATA_OUT[9]~reg0.CLK
+CLK => DATA_OUT[10]~reg0.CLK
+CLK => DATA_OUT[11]~reg0.CLK
+CLK => DATA_OUT[12]~reg0.CLK
+CLK => DATA_OUT[13]~reg0.CLK
+CLK => DATA_OUT[14]~reg0.CLK
+CLK => DATA_OUT[15]~reg0.CLK
+CLK => DATA_OUT[16]~reg0.CLK
+CLK => rom.CLK0
+
+
+|EECS301_Lab5_TopLevel|Morse_Code_Module:morse_code_tx|Morse_Code_Transmitter:transmitter
+SEND => ~NO_FANOUT~
+SEQ_DATA[0] => ~NO_FANOUT~
+SEQ_DATA[1] => ~NO_FANOUT~
+SEQ_DATA[2] => ~NO_FANOUT~
+SEQ_DATA[3] => ~NO_FANOUT~
+SEQ_DATA[4] => ~NO_FANOUT~
+SEQ_DATA[5] => ~NO_FANOUT~
+SEQ_DATA[6] => ~NO_FANOUT~
+SEQ_DATA[7] => ~NO_FANOUT~
+SEQ_DATA[8] => ~NO_FANOUT~
+SEQ_DATA[9] => ~NO_FANOUT~
+SEQ_DATA[10] => ~NO_FANOUT~
+SEQ_DATA[11] => ~NO_FANOUT~
+SEQ_DATA[12] => ~NO_FANOUT~
+SEQ_LEN[0] => ~NO_FANOUT~
+SEQ_LEN[1] => ~NO_FANOUT~
+SEQ_LEN[2] => ~NO_FANOUT~
+SEQ_LEN[3] => ~NO_FANOUT~
+RATE_TICK => ~NO_FANOUT~
+DONE <= <GND>
+MC_OUT <= <GND>
+CLK => ~NO_FANOUT~
+RESET => ~NO_FANOUT~
+
+
+|EECS301_Lab5_TopLevel|Buzzer_Tone_Generator:tone_generator
+TONE_ENABLE => TONE_ENABLE.IN1
+TONE_SELECT[0] => Decoder0.IN1
+TONE_SELECT[0] => pwm_freq_counts[6].DATAIN
+TONE_SELECT[1] => Decoder0.IN0
+TONE_SELECT[1] => pwm_freq_counts[3].DATAIN
+TONE_SELECT[1] => pwm_freq_counts[12].DATAIN
+TONE_OUT <= Buzzer_PWM_Controller:pwm_controller.PWM_OUT
+CLK => CLK.IN1
+
+
+|EECS301_Lab5_TopLevel|Buzzer_Tone_Generator:tone_generator|Buzzer_PWM_Controller:pwm_controller
+PWM_ENABLE => PWM_OUT.OUTPUTSELECT
+PWM_FREQ_COUNTS[0] => Add0.IN34
+PWM_FREQ_COUNTS[1] => Add0.IN33
+PWM_FREQ_COUNTS[2] => Add0.IN32
+PWM_FREQ_COUNTS[3] => Add0.IN31
+PWM_FREQ_COUNTS[4] => Add0.IN30
+PWM_FREQ_COUNTS[5] => Add0.IN29
+PWM_FREQ_COUNTS[6] => Add0.IN28
+PWM_FREQ_COUNTS[7] => Add0.IN27
+PWM_FREQ_COUNTS[8] => Add0.IN26
+PWM_FREQ_COUNTS[9] => Add0.IN25
+PWM_FREQ_COUNTS[10] => Add0.IN24
+PWM_FREQ_COUNTS[11] => Add0.IN23
+PWM_FREQ_COUNTS[12] => Add0.IN22
+PWM_FREQ_COUNTS[13] => Add0.IN21
+PWM_FREQ_COUNTS[14] => Add0.IN20
+PWM_FREQ_COUNTS[15] => Add0.IN19
+PWM_FREQ_COUNTS[16] => Add0.IN18
+PWM_DUTY_COUNTS[0] => pwm_dutytime_loadval[0].DATAIN
+PWM_DUTY_COUNTS[1] => pwm_dutytime_loadval[1].DATAIN
+PWM_DUTY_COUNTS[2] => pwm_dutytime_loadval[2].DATAIN
+PWM_DUTY_COUNTS[3] => pwm_dutytime_loadval[3].DATAIN
+PWM_DUTY_COUNTS[4] => pwm_dutytime_loadval[4].DATAIN
+PWM_DUTY_COUNTS[5] => pwm_dutytime_loadval[5].DATAIN
+PWM_DUTY_COUNTS[6] => pwm_dutytime_loadval[6].DATAIN
+PWM_DUTY_COUNTS[7] => pwm_dutytime_loadval[7].DATAIN
+PWM_DUTY_COUNTS[8] => pwm_dutytime_loadval[8].DATAIN
+PWM_DUTY_COUNTS[9] => pwm_dutytime_loadval[9].DATAIN
+PWM_DUTY_COUNTS[10] => pwm_dutytime_loadval[10].DATAIN
+PWM_DUTY_COUNTS[11] => pwm_dutytime_loadval[11].DATAIN
+PWM_DUTY_COUNTS[12] => pwm_dutytime_loadval[12].DATAIN
+PWM_DUTY_COUNTS[13] => pwm_dutytime_loadval[13].DATAIN
+PWM_DUTY_COUNTS[14] => pwm_dutytime_loadval[14].DATAIN
+PWM_DUTY_COUNTS[15] => pwm_dutytime_loadval[15].DATAIN
+PWM_DUTY_COUNTS[16] => pwm_dutytime_loadval[16].DATAIN
+PWM_INTERVAL_TICK <= PWM_INTERVAL_TICK~reg0.DB_MAX_OUTPUT_PORT_TYPE
+PWM_OUT <= PWM_OUT~reg0.DB_MAX_OUTPUT_PORT_TYPE
+CLK => PWM_OUT~reg0.CLK
+CLK => PWM_INTERVAL_TICK~reg0.CLK
+CLK => pwm_dutytime_counter_reg[0].CLK
+CLK => pwm_dutytime_counter_reg[1].CLK
+CLK => pwm_dutytime_counter_reg[2].CLK
+CLK => pwm_dutytime_counter_reg[3].CLK
+CLK => pwm_dutytime_counter_reg[4].CLK
+CLK => pwm_dutytime_counter_reg[5].CLK
+CLK => pwm_dutytime_counter_reg[6].CLK
+CLK => pwm_dutytime_counter_reg[7].CLK
+CLK => pwm_dutytime_counter_reg[8].CLK
+CLK => pwm_dutytime_counter_reg[9].CLK
+CLK => pwm_dutytime_counter_reg[10].CLK
+CLK => pwm_dutytime_counter_reg[11].CLK
+CLK => pwm_dutytime_counter_reg[12].CLK
+CLK => pwm_dutytime_counter_reg[13].CLK
+CLK => pwm_dutytime_counter_reg[14].CLK
+CLK => pwm_dutytime_counter_reg[15].CLK
+CLK => pwm_dutytime_counter_reg[16].CLK
+CLK => pwm_dutytime_counter_reg[17].CLK
+CLK => pwm_interval_counter_reg[0].CLK
+CLK => pwm_interval_counter_reg[1].CLK
+CLK => pwm_interval_counter_reg[2].CLK
+CLK => pwm_interval_counter_reg[3].CLK
+CLK => pwm_interval_counter_reg[4].CLK
+CLK => pwm_interval_counter_reg[5].CLK
+CLK => pwm_interval_counter_reg[6].CLK
+CLK => pwm_interval_counter_reg[7].CLK
+CLK => pwm_interval_counter_reg[8].CLK
+CLK => pwm_interval_counter_reg[9].CLK
+CLK => pwm_interval_counter_reg[10].CLK
+CLK => pwm_interval_counter_reg[11].CLK
+CLK => pwm_interval_counter_reg[12].CLK
+CLK => pwm_interval_counter_reg[13].CLK
+CLK => pwm_interval_counter_reg[14].CLK
+CLK => pwm_interval_counter_reg[15].CLK
+CLK => pwm_interval_counter_reg[16].CLK
+CLK => pwm_interval_counter_reg[17].CLK
+CLK => pwm_dutytime_loadval[0].CLK
+CLK => pwm_dutytime_loadval[1].CLK
+CLK => pwm_dutytime_loadval[2].CLK
+CLK => pwm_dutytime_loadval[3].CLK
+CLK => pwm_dutytime_loadval[4].CLK
+CLK => pwm_dutytime_loadval[5].CLK
+CLK => pwm_dutytime_loadval[6].CLK
+CLK => pwm_dutytime_loadval[7].CLK
+CLK => pwm_dutytime_loadval[8].CLK
+CLK => pwm_dutytime_loadval[9].CLK
+CLK => pwm_dutytime_loadval[10].CLK
+CLK => pwm_dutytime_loadval[11].CLK
+CLK => pwm_dutytime_loadval[12].CLK
+CLK => pwm_dutytime_loadval[13].CLK
+CLK => pwm_dutytime_loadval[14].CLK
+CLK => pwm_dutytime_loadval[15].CLK
+CLK => pwm_dutytime_loadval[16].CLK
+CLK => pwm_dutytime_loadval[17].CLK
+CLK => pwm_interval_loadval[0].CLK
+CLK => pwm_interval_loadval[1].CLK
+CLK => pwm_interval_loadval[2].CLK
+CLK => pwm_interval_loadval[3].CLK
+CLK => pwm_interval_loadval[4].CLK
+CLK => pwm_interval_loadval[5].CLK
+CLK => pwm_interval_loadval[6].CLK
+CLK => pwm_interval_loadval[7].CLK
+CLK => pwm_interval_loadval[8].CLK
+CLK => pwm_interval_loadval[9].CLK
+CLK => pwm_interval_loadval[10].CLK
+CLK => pwm_interval_loadval[11].CLK
+CLK => pwm_interval_loadval[12].CLK
+CLK => pwm_interval_loadval[13].CLK
+CLK => pwm_interval_loadval[14].CLK
+CLK => pwm_interval_loadval[15].CLK
+CLK => pwm_interval_loadval[16].CLK
+CLK => pwm_interval_loadval[17].CLK
+
+
