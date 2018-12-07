@@ -205,6 +205,8 @@ module PS2_Keyboard_Serial_Controller
 					PS2_KEY_READY 	<= 1'b0;
 					state <= S0;
 				end
+			endcase
+			
 		end
 	end
 
